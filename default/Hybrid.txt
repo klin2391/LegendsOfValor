@@ -1,0 +1,7 @@
+Name/Health/Level/Damage/Agility/Defense                Hybrids have good damage
+Minotaur        150     1       55      5      20           //Half man, half bull
+Centaur         100     1       45      5      20           //Half man, half horse
+Anubis          100     1       45      10     20           //Half man, half jackal
+Dwarf           75      1       30      5      20           //Half man
+Elf             75      1       30      10     20           //Not the kind that make cookies in a tree
+Harpie          75      1       30      10     20           //Half man, half bird

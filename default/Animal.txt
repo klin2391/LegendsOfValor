@@ -1,0 +1,5 @@
+Name/Health/Level/Damage/Agility/Defense    Animals have good agility (dodge)
+Wolf        50    1       15      20      20            //He howl, but under there is a good pupper
+Bear        100   1       25      15      30            //A black bear is 12 raccoons wearing a bear costume
+Crocodile   75    1       10      15      20            //See you in a while!
+Snake       20    1       5       15      10            //Smooth and Slippery!

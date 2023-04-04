@@ -1,0 +1,4 @@
+Name/health/mana/strength/agility/dexterity/weight/gold/level       Favored for their strength and dexterity (attack and magic)
+Thor      100    100     30    10      15     100    1000  1        //The god of storms is heard during storms beating his hammer. He is very strong
+Heimdallr 100    100     15    10      15     100    1000  1        //The watchman of the gods has keen senses and allows him to see further than most
+Loki      100    100     15    10      20     100    1000  1        //The trickster was raised by witches and is proficient in magic

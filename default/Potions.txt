@@ -1,0 +1,8 @@
+name/price/weight/level/itemUses/effect/targetAttribute
+Health_I        10      2       1       1       30       Health                         // Bottoms up
+Mana_I          10      2       1       1       30       Mana                           // Let me see your cup
+Strength_I      10      2       1       1       30       Strength                       // Gotta couple bottles, but a couple ain't enough
+Dexterity_I     10      2       1       1       30       Dexterity                      // Drank
+Agility_I       10      2       1       1       30       Agility                        // No answers at the bottom of the bottle
+Weight_I        10      2       1       1       30       Weight                         // Drink your milk so you can grow up big and strong
+Experience_I    10      2       1       1       30       Experience                     // Money doesn't grow on trees, but wisdom is found at the bottom of an empty bottle

@@ -1,0 +1,7 @@
+Name/Health/Level/Damage/Agility/Defense    Beasts have good defense
+Jotnar      200    1       15      10      30           //A frost giant
+Sphynx      150    1       20      10      25           //Tell me a riddle!
+Kraken      150    1       25      10      20           //Dont go swimming with one!
+Troll       150    1       15      10      25           //Pay the bridge toll
+Chimera     150    1       20      10      25           //Why have one animal when you can have 3?
+Hydra       200    1       15      10      35           //Do NOT go for the head

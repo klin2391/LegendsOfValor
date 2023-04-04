@@ -1,0 +1,4 @@
+Name/health/mana/strength/agility/dexterity/weight/gold/level               Favorite for their strength and agility (attack and dodging)
+Achilles      100    100     20    20      10     100    1000   1         //This warrior was known in battle for being untouchable in combat. He has good agility
+Hercules      200    100     20    15      10     100    1000   1         //This demigod wears wears the hide of the Nemean Lion that increases his health.
+Midas         100    100     15    15      10     100    10000  1         //A cautionary tale against greed is benefitial to this king. He has a lot of gold.

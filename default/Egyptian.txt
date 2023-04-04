@@ -1,0 +1,4 @@
+Name/health/mana/strength/agility/dexterity/weight/gold/level         Favored for their dexterity and agility (magic and dodging)
+Isis       100    100     10    15      10     100    1000  1         //Goddess of life, she healed her husband Osiris, and has the ability to heal heroes over km walked.
+Geb        100    100     10    15      15     100    1000  1         //The earth god, has the ability to change restricted terrain to common terrain
+Ra         100    200     10    15      15     100    1000  1         //The king of the gods has the highest mana

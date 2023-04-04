@@ -1,0 +1,4 @@
+name/price/weight/level/uses/targetAttribute/manaCost/effect/damage
+Weakness_I        10      2       1       3       Damage        30       10       20      //A spell that weakens enemy damage
+Vulnerability_I   10      2       1       3       Defense       30       10       20      //A spell that weakens enemy defense
+Slow_I            10      2       1       3       Agility       30       10       20      //A spell that weakens enemy agility
