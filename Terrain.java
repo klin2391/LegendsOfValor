@@ -60,6 +60,38 @@
                 this.tradeAllowed = false;
                 this.battleAllowed = false;
                 break;
+            case 4:
+                this.symbol = "B";
+                this.type = 4;
+                this.color = new Color("purple");
+                this.walkable = true;
+                this.tradeAllowed = false;
+                this.battleAllowed = true;
+                break;
+            case 5:
+                this.symbol = "C";
+                this.type = 5;
+                this.color = new Color("purple");
+                this.walkable = true;
+                this.tradeAllowed = false;
+                this.battleAllowed = true;
+                break;
+            case 6:
+                this.symbol = "K";
+                this.type = 6;
+                this.color = new Color("purple");
+                this.walkable = true;
+                this.tradeAllowed = false;
+                this.battleAllowed = true;
+                break;
+            case 7:
+                this.symbol = "N";
+                this.type = 7;
+                this.color = new Color("purple");
+                this.walkable = true;
+                this.tradeAllowed = true;
+                this.battleAllowed = true;
+                break;
             default:
                 this.symbol = " ";
                 this.type = 0;

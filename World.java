@@ -10,6 +10,8 @@
 public class World {
     private GridSquare[][] map;        // The grid of GridSquares
     private int size = 10;                  // The size of the grid
+    private int sizeX = 10;
+    private int sizeY = 10;
     private RandomGen rand = new RandomGen();            // RandomGen object
     private int probabilityMarket = 15;      // The probability of a market
     private int probabilityRestricted = 20; // The probability of restricted terrain
@@ -20,17 +22,44 @@ public class World {
     
     // Constructor
     public World() {
-        this.map = new GridSquare[size][size];
+        this.map = new GridSquare[sizeX][sizeY];
         ht = new HeroTeam();
-        this.generateWorld(ht);
+        this.generateWorld();
     }
 
     // Constructor that takes in size
     public World(int size) {
         ht = new HeroTeam();
-        this.size = size;
-        this.map = new GridSquare[size][size];
-        this.generateWorld(ht);
+        this.sizeX = size;
+        this.sizeY = size;
+        this.map = new GridSquare[sizeX][sizeY];
+        this.generateWorld();
+    }
+
+    // public World(int size, int height){
+    //     ht = new HeroTeam();
+    //     // this.size = size;
+    //     // this.sizeX = size;
+    //     this.sizeY = height;
+    //     int numHeroes = ht.getTeamSize();
+    //     this.size = numHeroes*3+1;
+    //     this.map = new GridSquare[height][this.size];
+    //     // this.generateWorld();
+    // }
+
+    public World(int size, int gameMode){
+        ht = new HeroTeam();
+        if (gameMode == 0) {
+            this.sizeX = size;
+            this.sizeY = size;
+            this.map = new GridSquare[sizeX][sizeY];
+        }
+        else if (gameMode == 1){
+            this.sizeY = size;
+            int numHeroes = ht.getTeamSize();
+            this.size = numHeroes*3+1;
+            this.map = new GridSquare[size][this.size];
+        }
     }
 
     // Accessors
@@ -41,6 +70,47 @@ public class World {
     public GridSquare getCurrent() {
         return this.map[playerLocationX][playerLocationY];
     }
+
+    public GridSquare[][] getMap() {
+        return this.map;
+    }
+
+    public int getSize() {
+        return this.size;
+    }
+
+    public int getPlayerLocationX() {
+        return this.playerLocationX;
+    }
+
+    public int getPlayerLocationY() {
+        return this.playerLocationY;
+    }
+
+    public RandomGen getRand() {
+        return this.rand;
+    }
+
+    public int getProbabilityMarket() {
+        return this.probabilityMarket;
+    }
+
+    public int getProbabilityRestricted() {
+        return this.probabilityRestricted;
+    }
+
+    public FactoryMarket getFactoryMarket() {
+        return this.factoryMarket;
+    }
+
+    public void setProbabilityMarket(int probabilityMarket) {
+        this.probabilityMarket = probabilityMarket;
+    }
+
+    public void setProbabilityRestricted(int probabilityRestricted) {
+        this.probabilityRestricted = probabilityRestricted;
+    }
+
 
     // Chooses random place to spawn player
     private void spawnPlayer() {
@@ -61,7 +131,7 @@ public class World {
     }
 
     // Generates the world
-    public void generateWorld(HeroTeam ht) {
+    public void generateWorld() {
         spawnPlayer();
         boolean hasMarket = false;
         for (int i = 0; i < this.size; i++) {
@@ -88,7 +158,7 @@ public class World {
             }
         }
         if (!hasMarket) {
-            generateWorld(ht);                                                                  // If there is no market, generate a new world.
+            generateWorld();                                                                  // If there is no market, generate a new world.
         }
     }
 
@@ -130,10 +200,11 @@ public class World {
         output += "+\n";
         for (int i = playerLocationX-tempSizeXN; i < playerLocationX+tempSizeXP+1; i++) {   
             for (int j = playerLocationY-tempSizeYN; j < playerLocationY+tempSizeYP+1; j++) {
-                if (this.map[i][j].getIsOccupied())
-                    output += "|  " + this.map[i][j].getHeroTeam().getColor().getColor() + this.map[i][j].getHeroTeam().getSymbol() + this.map[i][j].getHeroTeam().getColor().getBlack() + "  ";
-                else
-                    output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j].getTerrain().getSymbol() + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
+                output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j] + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
+                // if (this.map[i][j].getIsOccupied())
+                //     output += "|  " + this.map[i][j].getHeroTeam().getColor().getColor() + this.map[i][j].getHeroTeam().getSymbol() + this.map[i][j].getHeroTeam().getColor().getBlack() + "  ";
+                // else
+                //     output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j].getTerrain().getSymbol() + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
             }
             output += "|\n";
             for (int k = playerLocationY-tempSizeYN; k < playerLocationY+tempSizeYP+1; k++) {                          //Prints the bottom row of the board is dependent on the size of the board.
@@ -158,10 +229,11 @@ public class World {
         output += "+\n";
         for (int i = 0; i < this.size; i++) {
             for (int j = 0; j < this.size; j++) {
-                if (this.map[i][j].getIsOccupied())
-                    output += "|  " + this.map[i][j].getHeroTeam().getColor().getColor() + this.map[i][j].getHeroTeam().getSymbol() + this.map[i][j].getHeroTeam().getColor().getBlack() + "  ";
-                else
-                    output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j].getTerrain().getSymbol() + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
+                output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j] + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
+                // if (this.map[i][j].getIsOccupied())
+                //     output += "|  " + this.map[i][j].getHeroTeam().getColor().getColor() + this.map[i][j].getHeroTeam().getSymbol() + this.map[i][j].getHeroTeam().getColor().getBlack() + "  ";
+                // else
+                //     output += "|  " + this.map[i][j].getTerrain().getColor().getColor() + this.map[i][j] + this.map[i][j].getTerrain().getColor().getBlack() + "  ";
             }
             output += "|\n";
             for (int j = 0; j < this.size; j++) {
