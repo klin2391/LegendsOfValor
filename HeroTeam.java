@@ -70,6 +70,10 @@ public class HeroTeam {
         return kmTraveled;
     }
 
+    public void setSymbol(String val){
+        symbol = val;
+    }
+
     // Returns the symbol of the hero team
     public String toString() {
         return color.getColor() + symbol + color.getBlack();
