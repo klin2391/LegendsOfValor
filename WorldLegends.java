@@ -61,6 +61,18 @@ public class WorldLegends extends World{
         }
     }
 
+    public ArrayList<Monster> getMonstersInRange(int x, int y) {
+        ArrayList<Monster> monsters = new ArrayList<>();
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1}};
+        for (int i = 0; i < indices.length; i++) {
+            GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
+            if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).hasMonster()) {
+                monsters.add(((GridSquareLegend) gs).getMonster());
+            }
+        }
+        return monsters;
+    }
+
     // Shows the entire world
     public void showGlobalView() {
         System.out.println(this);
