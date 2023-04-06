@@ -1,4 +1,4 @@
-public abstract class GridSquareNexus extends GridSquare{
+public abstract class GridSquareNexus extends GridSquareLegend{
     private Monster monster;
     private HeroTeam heroTeam;
 

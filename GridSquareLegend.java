@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class GridSquareLegend extends GridSquare{
     private int amplify;
     private HeroTeam heroTeam;
@@ -23,6 +25,18 @@ public class GridSquareLegend extends GridSquare{
         decreaseAttributes(amplify);
         this.heroTeam = null;
         this.isOccupied = false;
+    }
+
+    public boolean hasMonster() {
+        return !Objects.isNull(this.monster);
+    }
+
+    public void addMonster(Monster m) {
+        this.monster = m;
+    }
+
+    public Monster getMonster() {
+        return this.monster;
     }
 
     public String toString() {
