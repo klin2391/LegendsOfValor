@@ -11,7 +11,6 @@ public class WorldLegends extends World{
     }
 
     public void generateWorld() {
-        boolean hasMarket = false;
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < this.getSize(); j++) {
                 if (i == 0 || i == height-1 || j % 3 == 0 ||j == 0 || j == getSize()-1)         //Sets the border of the board to be severely restricted.
@@ -22,11 +21,9 @@ public class WorldLegends extends World{
                 }
                 else if (i == 1){
                     this.getMap()[i][j] = new GridSquareNexusMonster();
-                    hasMarket = true;
                 }
                 else if (i == height-2){
                     this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket());    // Creates market
-                    hasMarket = true;
                 }
                 else {
                     int randNum = this.getRand().generateRandomNumber();
@@ -43,10 +40,6 @@ public class WorldLegends extends World{
                 }
             }
         }
-        if (!hasMarket) {
-            generateWorld();                                                                  // If there is no market, generate a new world.
-        }
-        // System.out.println("World generated!");
     }
 
     // Shows the entire world
@@ -54,29 +47,51 @@ public class WorldLegends extends World{
         System.out.println(this);
     }
 
-    // tostring shows whole world
+    
     public String toString() {
         String output = "";
-        for (int i = 0; i < this.getSize(); i++) {
-            output += "+-----";
-        }
-        output += "+\n";
-        for (int i = 0; i < height; i++) {
+        for (int i = 0; i < this.height; i++) {
+            String row13 = "";
+            String row2 = "";
             for (int j = 0; j < this.getSize(); j++) {
-                output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
-                // if (this.getMap()[i][j].getIsOccupied())
-                //     output += "|  " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + "  ";
-                // else
-                //     output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
+                String terrainChar = " " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j].getTerrain().getSymbol() + this.getMap()[i][j].getTerrain().getColor().getBlack() + " ";
+                row13 += terrainChar + "-" + terrainChar + "-" + terrainChar;
+                if (this.getMap()[i][j].getIsOccupied())
+                    row2 += " | " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + "1 "; // TODO: GET HERO NUMBER
+                else
+                    row2 += " |    ";
+                if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
+                    row2 += "M1 | ";
+                else
+                    row2 += "   | ";
             }
-            output += "|\n";
-            for (int j = 0; j < this.getSize(); j++) {
-                output += "+-----";
-            }
-            output += "+\n";
+            output += row13+"\n"+row2+"\n"+row13+"\n";
         }
         return output;
     }
+    // // tostring shows whole world
+    // public String toString() {
+    //     String output = "";
+    //     for (int i = 0; i < this.getSize(); i++) {
+    //         output += "+-----";
+    //     }
+    //     output += "+\n";
+    //     for (int i = 0; i < height; i++) {
+    //         for (int j = 0; j < this.getSize(); j++) {
+    //             output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
+    //             // if (this.getMap()[i][j].getIsOccupied())
+    //             //     output += "|  " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + "  ";
+    //             // else
+    //             //     output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
+    //         }
+    //         output += "|\n";
+    //         for (int j = 0; j < this.getSize(); j++) {
+    //             output += "+-----";
+    //         }
+    //         output += "+\n";
+    //     }
+    //     return output;
+    // }
 
 
 }
