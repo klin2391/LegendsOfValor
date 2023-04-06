@@ -20,12 +20,23 @@ public class HeroTeam {
     private boolean canHeal = false;                        // Easter egg
     private int canSee = 3;                                 // Easter egg
 
-    // Constructor
+    // Constructors
     public HeroTeam() {
         heroes = new ArrayList<Hero>();
         factoryHero = new FactoryHero();
         heroes = factoryHero.selectHeroes(maxTeamSize);
         teamSize = heroes.size();
+        this.checkEasterEggs();
+    }
+
+    public HeroTeam(Hero h) {
+        heroes = new ArrayList<>();
+        heroes.add(h);
+        teamSize = 1;
+        this.checkEasterEggs();
+    }
+
+    private void checkEasterEggs() {
         for (Hero hero : heroes) {
             if (hero.getName().equals("Isis")) {    // These gods are Easter eggs
                 canHeal = true;
@@ -37,7 +48,7 @@ public class HeroTeam {
                 canManipulateTerrain = true;
             }
         }
-    }
+    }    
 
     // Accessors
     public Color getColor() {

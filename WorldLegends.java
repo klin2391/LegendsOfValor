@@ -1,6 +1,11 @@
+import java.util.ArrayList;
+
 public class WorldLegends extends World{
     private int height;
     private int numHeroes;
+    private ArrayList<HeroTeamLegends> heroes;
+    private ArrayList<Integer> playerLocationXs;
+    private ArrayList<Integer> playerLocationYs;
 
     public WorldLegends(int size) {
         super(size, 1);
@@ -8,8 +13,15 @@ public class WorldLegends extends World{
         this.height = size;
         this.setProbabilityMarket(30);
         this.setProbabilityRestricted(5);
+        this.heroes = new ArrayList<>();
+        for (int i = 0; i < this.getHeroTeam().getHeroes().size(); i++) {
+            this.heroes.add(new HeroTeamLegends(this.getHeroTeam().getHeroes().get(i),i));
+        }
+        this.playerLocationXs = new ArrayList<>();
+        this.playerLocationYs = new ArrayList<>();
     }
 
+    @Override
     public void generateWorld() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < this.getSize(); j++) {
@@ -24,6 +36,13 @@ public class WorldLegends extends World{
                 }
                 else if (i == height-2){
                     this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket());    // Creates market
+                    int heroNum = (j-1) / 3;
+                    if (j>0 && (j-1) % 3 == 0 && heroNum < this.getHeroTeam().getTeamSize()) {
+                        this.heroes.get(heroNum).setHomeNexus(this.getMap()[i][j]);
+                        this.playerLocationXs.add(i);
+                        this.playerLocationYs.add(j);
+                        this.getMap()[i][j].moveHeroTeam(this.heroes.get(heroNum));
+                    }
                 }
                 else {
                     int randNum = this.getRand().generateRandomNumber();
@@ -47,7 +66,7 @@ public class WorldLegends extends World{
         System.out.println(this);
     }
 
-    
+    // toString returns a stringified version of the entire world
     public String toString() {
         String output = "";
         for (int i = 0; i < this.height; i++) {
@@ -57,7 +76,7 @@ public class WorldLegends extends World{
                 String terrainChar = " " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j].getTerrain().getSymbol() + this.getMap()[i][j].getTerrain().getColor().getBlack() + " ";
                 row13 += terrainChar + "-" + terrainChar + "-" + terrainChar;
                 if (this.getMap()[i][j].getIsOccupied())
-                    row2 += " | " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + "1 "; // TODO: GET HERO NUMBER
+                    row2 += " | " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + "H" + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + " ";
                 else
                     row2 += " |    ";
                 if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
@@ -69,29 +88,4 @@ public class WorldLegends extends World{
         }
         return output;
     }
-    // // tostring shows whole world
-    // public String toString() {
-    //     String output = "";
-    //     for (int i = 0; i < this.getSize(); i++) {
-    //         output += "+-----";
-    //     }
-    //     output += "+\n";
-    //     for (int i = 0; i < height; i++) {
-    //         for (int j = 0; j < this.getSize(); j++) {
-    //             output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
-    //             // if (this.getMap()[i][j].getIsOccupied())
-    //             //     output += "|  " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + this.getMap()[i][j].getHeroTeam().getSymbol() + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + "  ";
-    //             // else
-    //             //     output += "|  " + this.getMap()[i][j].getTerrain().getColor().getColor() + this.getMap()[i][j] + this.getMap()[i][j].getTerrain().getColor().getBlack() + "  ";
-    //         }
-    //         output += "|\n";
-    //         for (int j = 0; j < this.getSize(); j++) {
-    //             output += "+-----";
-    //         }
-    //         output += "+\n";
-    //     }
-    //     return output;
-    // }
-
-
 }

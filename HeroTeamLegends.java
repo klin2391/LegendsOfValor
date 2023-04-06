@@ -1,11 +1,21 @@
 import java.util.ArrayList;
 
 public class HeroTeamLegends extends HeroTeam{
+    private GridSquare homeNexus;
     public HeroTeamLegends(int heroNum) {
         super();
         this.setSymbol(String.valueOf(heroNum));
     }
-    
+
+    public HeroTeamLegends(Hero hero, int heroNum) {
+        super(hero);
+        this.setSymbol(String.valueOf(heroNum));
+    }
+
+    // Sets the nexus that the hero should spawn at
+    public void setHomeNexus(GridSquare nexus) {
+        this.homeNexus = nexus;
+    }
 
     // Actions of the hero team
     public void heroAttack(HeroTeam heroTeam, ArrayList <Monster> monsters){

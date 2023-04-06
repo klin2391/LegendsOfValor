@@ -7,4 +7,15 @@ public abstract class GridSquareNexus extends GridSquare{
     public GridSquareNexus(int terrain){
         super(terrain);
     }
+
+    // Accessor
+    public HeroTeam getHeroTeam() {
+        return this.heroTeam;
+    }
+
+    public boolean moveHeroTeam(HeroTeam ht) {
+        this.heroTeam = ht;
+        this.isOccupied = true;
+        return true;
+    }
 }
