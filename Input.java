@@ -141,6 +141,8 @@ public class Input {
                 return true;
             case "y":
                 return true;
+            case "f":
+                return true;
             default:
                 return false;
         }

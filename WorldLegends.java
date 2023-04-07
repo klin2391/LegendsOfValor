@@ -107,6 +107,18 @@ public class WorldLegends extends World{
         return monsters;
     }
 
+    public ArrayList<HeroTeamLegends> getHeroesInRange(int x, int y) {
+        ArrayList<HeroTeamLegends> heroes = new ArrayList<>();
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1}};
+        for (int i = 0; i < indices.length; i++) {
+            GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
+            if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).getHeroTeam() != null) {
+                heroes.add((HeroTeamLegends) ((GridSquareLegend) gs).getHeroTeam());
+            }
+        }
+        return heroes;
+    }
+
     // Shows the entire world
     public void showGlobalView() {
         System.out.println(this);

@@ -15,9 +15,9 @@ public class MonstersAndHeroesLegends {
             this.world = new WorldLegends(10);
         }
         world.generateWorld();
-        GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
-        temp.setMonster(new Monster());
-        System.out.println("Monster created");
+        // GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
+        // temp.setMonster(new Monster());
+        // System.out.println("Monster created");
     }
 
     public boolean checkMonsterAdjacent(int i){
@@ -44,6 +44,18 @@ public class MonstersAndHeroesLegends {
     public void start() {
         Color.clearScreen();
         while (checkWinCondition() == 0) {                                   
+            for (int i = 0; i< world.getHeroTeam(i).getTeamSize(); i++) {
+                if (!this.world.getHeroTeam(i).heroAlive()){
+                    this.world.getHeroTeam(i).respawn();
+                    int x = this.world.getPlayerLocationXs(i);
+                    int y = this.world.getPlayerLocationYs(i);
+                    this.world.getMap()[x][y].removeHeroTeam();
+                    // CHange coordinates of heroTeam
+                    int height = this.world.getMap().length;
+                    this.world.setPlayerLocationXs(i, height-2);
+                    this.world.setPlayerLocationYs(i, (3*i+1));
+                }
+            }
             for (int i = 0; i < world.getHeroTeam().getTeamSize(); i++) {
                 if (checkWinCondition() != 0) {
                     break;
@@ -60,6 +72,9 @@ public class MonstersAndHeroesLegends {
                             break;
                         }
                         this.world.moveHeroTeam(-1, 0, i);
+                        // if (this.world.getPlayerLocationXs(i) == 2 && this.world.getPlayerLocationYs(i) == 2) {
+                        //     this.world.getHeroTeam(i).respawn();
+                        // }
                         break;
                     case "a":                                                           // move west
                         Color.clearScreen();
@@ -73,22 +88,23 @@ public class MonstersAndHeroesLegends {
                         Color.clearScreen();        
                         this.world.moveHeroTeam(0, 1, i);
                         break;
-                    case "m":                                                           // show map            
+                    case "m":                                                           // recall           
                         Color.clearScreen();
-                        this.world.getHeroTeam(i).recall();
+                        boolean b = this.world.getHeroTeam(i).recall();
                         // Remove from current cell
                         int x = this.world.getPlayerLocationXs(i);
                         int y = this.world.getPlayerLocationYs(i);
-                        this.world.getMap()[x][y].removeHeroTeam();
-                        
-                        // CHange coordinates of heroTeam
-                        int height = this.world.getMap().length;
-                        this.world.setPlayerLocationXs(i, height-2);
-                        this.world.setPlayerLocationYs(i, (3*i+1));
+                        if (b){
+                            this.world.getMap()[x][y].removeHeroTeam();
+                            // CHange coordinates of heroTeam
+                            int height = this.world.getMap().length;
+                            this.world.setPlayerLocationXs(i, height-2);
+                            this.world.setPlayerLocationYs(i, (3*i+1));
+                        }
                         break;
-                    case "y":
+                    case "y":                                                           // TP to player
                         Color.clearScreen();
-                        player = this.userInput.queryInt("Which player would you like to teleport to?", 1, this.world.getHeroTeam().getTeamSize())-1;
+                        player = this.userInput.queryInt("Which player would you like to teleport to?", 1, this.world.getHeroTeam(i).getTeamSize())-1;
                         int[] destination = this.world.showTeleportDestination(player);
                         x = this.world.getPlayerLocationXs(i);
                         y = this.world.getPlayerLocationYs(i);
@@ -99,34 +115,37 @@ public class MonstersAndHeroesLegends {
                         break;
                     case "h":                                                           // show hero team                  
                         Color.clearScreen();
-                        this.world.getHeroTeam().showHeroTeam();
+                        this.world.getHeroTeam(i).showHeroTeam();
+                        i--;
                         break;
                     case "i":                                                        // show inventory                  
                         Color.clearScreen();
-                        if (this.world.getHeroTeam().getTeamSize() > 1){                // if there are multiple players, ask which player's inventory to view
+                        if (this.world.getHeroTeam(i).getTeamSize() > 1){                // if there are multiple players, ask which player's inventory to view
                             String temp = "";
-                            for (int j = 0; j < this.world.getHeroTeam().getTeamSize(); j++) {
-                                temp += (j+1) + ". " + this.world.getHeroTeam().getHeroes().get(j).getName() + " ";
+                            for (int j = 0; j < this.world.getHeroTeam(i).getTeamSize(); j++) {
+                                temp += (j+1) + ". " + this.world.getHeroTeam(i).getHeroes().get(j).getName() + " ";
                             }
-                            player = userInput.queryInt("Which player's inventory would you like to view?" + temp, 1, this.world.getHeroTeam().getTeamSize());
-                            world.getHeroTeam().getHeroes().get(player-1).showInventory();
+                            player = userInput.queryInt("Which player's inventory would you like to view?" + temp, 1, this.world.getHeroTeam(i).getTeamSize());
+                            world.getHeroTeam(i).getHeroes().get(player-1).showInventory();
                         }
                         else {
-                            world.getHeroTeam().getHeroes().get(0).showInventory();
+                            world.getHeroTeam(i).getHeroes().get(0).showInventory();
                         }
+                        i--;
                         break;
                     case "t":                                                        // trade with merchant                         
                         if (this.world.checkMarket(i)){
                             Color.clearScreen();
                             GridSquareNexusHero market = (GridSquareNexusHero) this.world.getMap()[this.world.getPlayerLocationXs(i)][this.world.getPlayerLocationYs(i)];
-                            market.getMarket().enterMarket(this.world.getHeroTeam());
+                            market.getMarket().enterMarket(this.world.getHeroTeam(i));
                         }
                         else {
                             System.out.println("There is no market in this area.");
                         }
+                        i--;
                         break;
                     case "g":                                                       // Manipulate terrain (GEB only)                                   
-                        if (this.world.getHeroTeam().canManipulateTerrain()){
+                        if (this.world.getHeroTeam(i).canManipulateTerrain()){
                             // Color.clearScreen();
                             int direction = userInput.queryInt("Which direction would you like to manipulate terrain? (1. North, 2. East, 3. South, 4. West)", 1, 4);
                             switch (direction){
@@ -151,26 +170,32 @@ public class MonstersAndHeroesLegends {
                     
                     case "c":                                                               // Change equiptment                               
                         Color.clearScreen();
-                        for (int j = 0; j < this.world.getHeroTeam().getTeamSize(); j++) {  // show all players
-                            System.out.println((j+1) + ". " + this.world.getHeroTeam().getHeroes().get(j));
+                        for (int j = 0; j < this.world.getHeroTeam(i).getTeamSize(); j++) {  // show all players
+                            System.out.println((j+1) + ". " + this.world.getHeroTeam(i).getHeroes().get(j));
                         }
-                        player = userInput.queryInt("Which player's to change?", 1, this.world.getHeroTeam().getTeamSize());
+                        player = userInput.queryInt("Which player's to change?", 1, this.world.getHeroTeam(i).getTeamSize());
                         int temp = userInput.queryInt("Would you like to remove equiptment or add equiptment? (1. Remove, 2. Add)", 1, 2);
                         if (temp == 1){                                                     // remove equiptment                 
-                            this.world.getHeroTeam().getHeroes().get(player-1).removeEquiptment(this.world.getHeroTeam().getHeroes().get(player-1), userInput);
+                            this.world.getHeroTeam(i).getHeroes().get(player-1).removeEquiptment(this.world.getHeroTeam(i).getHeroes().get(player-1), userInput);
                         }
                         else {                                                               // add from ruck to body             
-                            this.world.getHeroTeam().getHeroes().get(player-1).addEquiptment(this.world.getHeroTeam().getHeroes().get(player-1), null, userInput);
+                            this.world.getHeroTeam(i).getHeroes().get(player-1).addEquiptment(this.world.getHeroTeam(i).getHeroes().get(player-1), null, userInput);
                         }
                         break;
                     
                     case "p":                                                           // Drink potion            
                         Color.clearScreen();
-                        for (int j = 0; i < this.world.getHeroTeam().getTeamSize(); j++) {
-                            System.out.println((j+1) + ". " + this.world.getHeroTeam().getHeroes().get(j));
+                        for (int j = 0; i < this.world.getHeroTeam(i).getTeamSize(); j++) {
+                            System.out.println((j+1) + ". " + this.world.getHeroTeam(i).getHeroes().get(j));
                         }                                                               // show all players                 
-                        player = userInput.queryInt("Which player is drinking?", 1, this.world.getHeroTeam().getTeamSize());
-                        this.world.getHeroTeam().getHeroes().get(player-1).drinkPotion(this.world.getHeroTeam().getHeroes().get(player-1), null, userInput);
+                        player = userInput.queryInt("Which player is drinking?", 1, this.world.getHeroTeam(i).getTeamSize());
+                        this.world.getHeroTeam(i).getHeroes().get(player-1).drinkPotion(this.world.getHeroTeam(i).getHeroes().get(player-1), null, userInput);
+                        break;
+                    case "f":
+                        Color.clearScreen();
+                        x = this.world.getPlayerLocationXs(i);
+                        y = this.world.getPlayerLocationYs(i);
+                        this.world.getHeroTeam(i).heroAttack(this.world.getHeroTeam(i), world.getMonstersInRange(x, y));
                         break;
                     default:
                         System.out.println("Invalid input. Please try again.");

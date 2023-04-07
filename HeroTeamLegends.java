@@ -17,14 +17,28 @@ public class HeroTeamLegends extends HeroTeam{
         this.homeNexus = nexus;
     }
 
-    public void recall() {
+    public boolean recall() {
         if (this.homeNexus != null && this.homeNexus.getHeroTeam() == null){
+            System.out.println(this.homeNexus.getHeroTeam());
             this.homeNexus.moveHeroTeam(this);
+            return true;
         }
         else {
             System.out.println("You cannot recall to this nexus");
+            return false;
         }
         
+    }
+
+    public void respawn() {
+        Hero temp = this.getHeroes().get(0);
+        String name = temp.getName();
+        FactoryHero factory = new FactoryHero();
+        temp = factory.createHero(name);
+        this.setHero(temp, 0);
+        recall();
+
+        //TODO UPDATE WORLD
     }
 
     // Actions of the hero team

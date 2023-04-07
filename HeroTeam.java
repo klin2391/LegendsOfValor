@@ -85,6 +85,10 @@ public class HeroTeam {
         symbol = val;
     }
 
+    public void setHero(Hero h, int index){
+        heroes.set(index, h);
+    }
+
     // Returns the symbol of the hero team
     public String toString() {
         return color.getColor() + symbol + color.getBlack();

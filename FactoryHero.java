@@ -46,6 +46,17 @@ public class FactoryHero {
         }
     }
 
+    public Hero createHero(String name) {
+        for (int i = 0; i < allHeroes.size(); i++) {
+            for (int j = 0; j < allHeroes.get(i).size(); j++) {
+                if (allHeroes.get(i).get(j).getName().equals(name)) {
+                    return allHeroes.get(i).get(j);
+                }
+            }
+        }
+        return null;
+    }
+
     // Selects heroes from the available cultures
     public ArrayList <Hero> selectHeroes(int maxTeamSize) {
         int numHeroes = 1;

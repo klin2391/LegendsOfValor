@@ -27,6 +27,7 @@ public class MonsterController {
         }
         for (int i = 0; i < this.livingMonsters.size(); i++) {
             // fight or move
+
         }
     }
 

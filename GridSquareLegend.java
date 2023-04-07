@@ -19,6 +19,10 @@ public class GridSquareLegend extends GridSquare{
         this.ycoord = y;
     }
 
+    public void setHeroTeam(HeroTeam ht){
+        this.heroTeam = ht;
+    }
+
     public Monster getMonster(){
         return monster;
     }

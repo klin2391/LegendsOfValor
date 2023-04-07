@@ -1,6 +1,6 @@
 public abstract class GridSquareNexus extends GridSquareLegend{
-    private Monster monster;
-    private HeroTeam heroTeam;
+    // private Monster monster;
+    // private HeroTeam heroTeam;
     private Boolean winConditionMet = false;
 
     abstract public int checkWin();
@@ -10,25 +10,25 @@ public abstract class GridSquareNexus extends GridSquareLegend{
     }
 
     // Accessor
-    public HeroTeam getHeroTeam() {
-        return this.heroTeam;
-    }
+    // public HeroTeam getHeroTeam() {
+    //     return this.heroTeam;
+    // }
 
     public void removeHeroTeam() {
-        this.heroTeam = null;
+        this.setHeroTeam(null);
         this.isOccupied = false;
     }
 
     
     public boolean moveHeroTeam(HeroTeam ht) {
-        this.heroTeam = ht;
+        this.setHeroTeam(ht);
         this.isOccupied = true;
         System.out.println("MOved");
         return true;
     }
 
-    public Monster getMonster() {
-        return this.monster;
-    }
+    // public Monster getMonster() {
+    //     return this.monster;
+    // }
 
 }
