@@ -17,6 +17,16 @@ public class HeroTeamLegends extends HeroTeam{
         this.homeNexus = nexus;
     }
 
+    public void recall() {
+        if (this.homeNexus != null && this.homeNexus.getHeroTeam() == null){
+            this.homeNexus.moveHeroTeam(this);
+        }
+        else {
+            System.out.println("You cannot recall to this nexus");
+        }
+        
+    }
+
     // Actions of the hero team
     public void heroAttack(HeroTeam heroTeam, ArrayList <Monster> monsters){
         Input input = new Input();

@@ -17,6 +17,20 @@ public class Monster {
     private HashMap<String, Attribute> attributes;
     private String[] attributeFields = {"Health", "Damage", "Agility", "Defense"};
 
+    public Monster(){
+        this.name = "M";
+        this.description = "Template";
+        this.category = " ";
+        this.level = new Level();
+        this.attributes = new HashMap<String, Attribute>();
+        for (int i = 0; i < attributeFields.length; i++) {
+            Attribute attribute;
+            attribute = new Attribute(0, attributeFields[i], false);
+            level.registerObserver(attribute);
+            attributes.put(attributeFields[i], attribute);
+        }
+    }
+
     // Constructor that takes in data
     public Monster(String[] data, String description, String category) {
         this.name = data[0];

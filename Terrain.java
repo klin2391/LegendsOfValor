@@ -87,9 +87,17 @@
             case 7:
                 this.symbol = "N";
                 this.type = 7;
-                this.color = new Color("purple");
+                this.color = new Color("blue");
                 this.walkable = true;
                 this.tradeAllowed = true;
+                this.battleAllowed = true;
+                break;
+            case 8:
+                this.symbol = "N";
+                this.type = 8;
+                this.color = new Color("red");
+                this.walkable = true;
+                this.tradeAllowed = false;
                 this.battleAllowed = true;
                 break;
             default:
