@@ -66,10 +66,10 @@ public class WorldLegends extends World{
                 //     this.getMap()[i][j].moveHeroTeam(this.getHeroTeam());
                 // }
                 else if (i == 1){
-                    this.getMap()[i][j] = new GridSquareNexusMonster();
+                    this.getMap()[i][j] = new GridSquareNexusMonster(i,j);
                 }
                 else if (i == height-2){
-                    this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket());    // Creates market
+                    this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket(),i,j);    // Creates market
                     int heroNum = (j-1) / 3;
                     if (j>0 && (j-1) % 3 == 0 && heroNum < this.getHeroTeam().getTeamSize()) {
                         this.heroes.get(heroNum).setHomeNexus(this.getMap()[i][j]);

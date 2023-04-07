@@ -1,7 +1,7 @@
 public class GridSquareNexusMonster extends GridSquareNexus{
 
-    public GridSquareNexusMonster() {
-        super(8);
+    public GridSquareNexusMonster(int x, int y) {
+        super(8,x,y);
     }
 
     public void removeHeroTeam(){

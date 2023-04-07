@@ -1,8 +1,8 @@
 public class GridSquareNexusHero extends GridSquareNexus{
     private Marketplace marketplace;
 
-    public GridSquareNexusHero(Marketplace marketplace) {
-        super(7);
+    public GridSquareNexusHero(Marketplace marketplace, int x, int y) {
+        super(7, x ,y );
         this.marketplace = marketplace;
     }
     

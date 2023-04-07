@@ -47,10 +47,6 @@ public class GridSquareLegend extends GridSquare{
         this.monster = m;
     }
 
-    public Monster getMonster() {
-        return this.monster;
-    }
-
     public String toString() {
         if (this.isOccupied) {
             return this.heroTeam.toString();
@@ -79,8 +75,8 @@ public class GridSquareLegend extends GridSquare{
             default:
                 return;}
         for (Hero h : this.heroTeam.getHeroes()){
-            double effectValue = h.getAttributes().get(effect).getCurrent();
-            effectValue += (effectValue * 0.1);
+            double effectValue = h.getAttributes().get(effect).getMax();
+            effectValue = (effectValue * 0.1);
             h.getAttributes().get(effect).increaseCurrent(effectValue);
         }
     }
@@ -100,8 +96,8 @@ public class GridSquareLegend extends GridSquare{
             default:
                 return;}
         for (Hero h : this.heroTeam.getHeroes()){
-            double effectValue = h.getAttributes().get(effect).getCurrent();
-            effectValue -= (effectValue * 1/11);
+            double effectValue = h.getAttributes().get(effect).getMax();
+            effectValue = (effectValue * 0.1);
             h.getAttributes().get(effect).decreaseCurrent(effectValue);
         }
     }

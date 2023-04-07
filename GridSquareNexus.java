@@ -5,8 +5,8 @@ public abstract class GridSquareNexus extends GridSquareLegend{
 
     abstract public int checkWin();
 
-    public GridSquareNexus(int terrain){
-        super(terrain);
+    public GridSquareNexus(int terrain, int x, int y){
+        super(terrain, x ,y );
     }
 
     // Accessor
