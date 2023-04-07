@@ -124,9 +124,11 @@ public class World {
 
     // Sees if the player is on a market
     public boolean checkMarket(){
-        if (this.map[playerLocationX][playerLocationY].getTerrain().getType() == 2){
+        if (this.map[playerLocationX][playerLocationY].getTerrain().getTradeAllowed()){
             return true;
         }
+        System.out.println("DBG trade not allowed");
+        System.out.println(this.map[playerLocationX][playerLocationY].getTerrain().getSymbol());
         return false;
     }
 

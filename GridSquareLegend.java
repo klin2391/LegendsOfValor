@@ -2,15 +2,27 @@ public class GridSquareLegend extends GridSquare{
     private int amplify;
     private HeroTeam heroTeam;
     private Monster monster;
+    private int xcoord;
+    private int ycoord;
 
     public GridSquareLegend(){
         super();
         this.amplify = 0;
     }
 
-    public GridSquareLegend(int amplify){
+    public GridSquareLegend(int amplify, int x, int y){
         super(amplify);
         this.amplify = amplify;
+        this.xcoord = x;
+        this.ycoord = y;
+    }
+
+    public Monster getMonster(){
+        return monster;
+    }
+
+    public void setMonster(Monster m){
+        this.monster = m;
     }
 
     public boolean moveHeroTeam(HeroTeam ht){
@@ -35,7 +47,7 @@ public class GridSquareLegend extends GridSquare{
     }
 
     public HeroTeam getHeroTeam(){
-        return null;
+        return heroTeam;
     }
 
     private void increaseAttributes(int amplify){
@@ -51,7 +63,7 @@ public class GridSquareLegend extends GridSquare{
                 effect = "Strength";
                 break;
             default:
-                break;}
+                return;}
         for (Hero h : this.heroTeam.getHeroes()){
             double effectValue = h.getAttributes().get(effect).getCurrent();
             effectValue += (effectValue * 0.1);
@@ -72,7 +84,7 @@ public class GridSquareLegend extends GridSquare{
                 effect = "Strength";
                 break;
             default:
-                break;}
+                return;}
         for (Hero h : this.heroTeam.getHeroes()){
             double effectValue = h.getAttributes().get(effect).getCurrent();
             effectValue -= (effectValue * 1/11);
