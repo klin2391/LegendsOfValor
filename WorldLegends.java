@@ -104,6 +104,14 @@ public class WorldLegends extends World{
                 }
             }
         }
+        // Used to test Hero movement past monsters and attacking monsters
+        // Monster m = new Monster();
+        // GridSquareLegend gs = (GridSquareLegend) this.getMap()[4][2];
+        // gs.setMonster(m);
+        // Monster m2 = new Monster();
+        // GridSquareLegend gs2 = (GridSquareLegend) this.getMap()[4][1];
+        // gs2.setMonster(m2);
+        
     }
 
     // Checks to see which monsters are within a 1 block range of hero
@@ -165,8 +173,14 @@ public class WorldLegends extends World{
                                                                             + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + " ";
                 else
                     row2 += " |    ";
-                if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
-                    row2 += "M1 | ";
+                // if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
+                //     row2 += "M1 | ";
+                if (this.getMap()[i][j].getTerrain().getWalkable()){
+                    if (((GridSquareLegend) this.getMap()[i][j]).hasMonster())
+                        row2 += "M1 | ";
+                    else
+                        row2 += "   | ";
+                }
                 else
                     row2 += "   | ";
             }
@@ -191,7 +205,7 @@ public class WorldLegends extends World{
                 row13 += terrainChar + "-" + terrainChar + "-" + terrainChar;
                 Color temp = new Color("red");
                 if (this.getMap()[i][j].getIsOccupied())
-                    row2 += " | " + temp.getColor() + "X  " + temp.getBlack() + " ";
+                    row2 += " | " + temp.getColor() + "X " + temp.getBlack() + " ";
                 else{
                     if (this.getMap()[i][j].getTerrain().getWalkable() && !((i == x+1 && j == y-1)||(i == x+1 && j == y+1))){
                         row2 += " | " + position + "  ";
@@ -202,8 +216,12 @@ public class WorldLegends extends World{
                     else
                         row2 += " |    ";
                 }
-                if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
-                    row2 += "X | ";
+                if (this.getMap()[i][j].getTerrain().getWalkable()){
+                    if (((GridSquareLegend) this.getMap()[i][j]).hasMonster())
+                        row2 += "X | ";
+                    else
+                        row2 += "   | ";
+                }
                 else
                     row2 += "   | ";
             }

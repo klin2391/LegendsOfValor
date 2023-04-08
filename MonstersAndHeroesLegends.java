@@ -111,7 +111,7 @@ public class MonstersAndHeroesLegends {
                     
                     case "y":                                                           // TP to player
                         Color.clearScreen();
-                        player = this.userInput.queryInt("Which player would you like to teleport to?", 1, this.world.getHeroTeam(i).getTeamSize())-1;
+                        player = this.userInput.queryInt("Which player would you like to teleport to?", 1, this.world.getHeroTeam().getTeamSize())-1;
                         int[] destination = this.world.showTeleportDestination(player);     // Shows available teleport destinations
                         x = this.world.getPlayerLocationXs(i);
                         y = this.world.getPlayerLocationYs(i);
