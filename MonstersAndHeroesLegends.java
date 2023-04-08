@@ -25,9 +25,6 @@ public class MonstersAndHeroesLegends {
         }
         mc = new MonsterController(3, this.world);
         world.generateWorld(this.mc);
-        GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
-        temp.setMonster(new Monster());
-        System.out.println("Monster created");
     }
 
     // Checks to see if monster is next to hero team. If so, the hero cannot move forward
