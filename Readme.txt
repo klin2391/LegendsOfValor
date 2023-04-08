@@ -23,7 +23,7 @@ GridSquareNexusMonster.java: Subclass of GridSquareNexus that represents a nexus
 
 HeroTeamLegends.java: Subclass of HeroTeam that represents a team of heroes. Each team has 1 hero and a spawn point. Ability to recall and respawn
 
-MonsterController.java: Class that controls the monsters. Spawns monsters and controls their movements
+MonsterController.java: Class that controls the monsters. Spawns monsters and controls their movements and actions
 
 MonstersAndHeroesLegends.java: Class that runs the game. Constructor and game loop.
 
