@@ -50,8 +50,8 @@ public class MonsterController {
             ArrayList<HeroTeamLegends> closeHeroes = this.world.getHeroesInRange(this.monsterXs.get(i), this.monsterYs.get(i));
             if (closeHeroes.isEmpty()) {
                 // move
-                this.world.moveMonster(this.monsterXs.get(i), this.monsterYs.get(i));
-                this.monsterXs.set(i,this.monsterXs.get(i)+1);
+                if (this.world.moveMonster(this.monsterXs.get(i), this.monsterYs.get(i)))
+                    this.monsterXs.set(i,this.monsterXs.get(i)+1);
             }
             else {
                 // fight

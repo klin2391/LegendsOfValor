@@ -16,6 +16,7 @@ public class Monster {
     private Level level;
     private HashMap<String, Attribute> attributes;
     private String[] attributeFields = {"Health", "Damage", "Agility", "Defense"};
+    private int id;
 
     public Monster(){
         this.name = "M";
@@ -29,6 +30,7 @@ public class Monster {
             level.registerObserver(attribute);
             attributes.put(attributeFields[i], attribute);
         }
+        this.id = 0;
     }
 
     // Constructor that takes in data
@@ -65,6 +67,15 @@ public class Monster {
 
     public HashMap<String, Attribute> getAttributes() {
         return attributes;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    // Mutators
+    public void setId(int id) {
+        this.id = id % 9 + 1;
     }
 
     // To string. Red is bad

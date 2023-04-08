@@ -23,8 +23,8 @@ public class MonstersAndHeroesLegends {
         else {
             this.world = new WorldLegends(10);
         }
-        world.generateWorld(this.mc);
         mc = new MonsterController(8, this.world);
+        world.generateWorld(this.mc);
         GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
         temp.setMonster(new Monster());
         System.out.println("Monster created");
@@ -220,6 +220,7 @@ public class MonstersAndHeroesLegends {
 
                     }
             }
+            this.mc.takeMonsterTurns();
         }
         if (checkWinCondition() == 1) {                         // check win condition
             System.out.println("[+] The heroes have won!");

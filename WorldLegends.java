@@ -74,10 +74,6 @@ public class WorldLegends extends World{
         return false;
     }
 
-    public int getHeight() {
-        return this.height;
-    }
-
     public void generateWorld(MonsterController mc) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < this.getSize(); j++) {
@@ -137,11 +133,15 @@ public class WorldLegends extends World{
         return monsters;
     }
 
-    public void moveMonster(int fromX, int fromY) {
+    public boolean moveMonster(int fromX, int fromY) {
+        GridSquare newGs = this.getMap()[fromX+1][fromY];
+        if (!(newGs instanceof GridSquareLegend))
+            return false;
         GridSquareLegend gs = (GridSquareLegend)(this.getMap()[fromX][fromY]);
         Monster m = gs.getMonster();
         gs.removeMonster();
-        ((GridSquareLegend)(this.getMap()[fromX+1][fromY])).setMonster(m);
+        ((GridSquareLegend)(newGs)).setMonster(m);
+        return true;
     }
     
     // Checks to see which heroes are within a 1 block range of monster
@@ -150,7 +150,7 @@ public class WorldLegends extends World{
         int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1},{0,0}};
         for (int i = 0; i < indices.length; i++) {
             GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
-            if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).getHeroTeam() != null) {
+            if (gs instanceof GridSquareLegend && !(gs instanceof GridSquareNexusHero) && ((GridSquareLegend) gs).getHeroTeam() != null) {
                 heroes.add((HeroTeamLegends) ((GridSquareLegend) gs).getHeroTeam());
             }
         }
@@ -190,11 +190,9 @@ public class WorldLegends extends World{
                                                                             + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + " ";
                 else
                     row2 += " |    ";
-                // if (this.getMap()[i][j].getIsOccupied()) // TODO: CHANGE TO CHECK FOR MONSTER
-                //     row2 += "M1 | ";
                 if (this.getMap()[i][j].getTerrain().getWalkable()){
                     if (((GridSquareLegend) this.getMap()[i][j]).hasMonster())
-                        row2 += "M1 | ";
+                        row2 += "M" + ((GridSquareLegend)(this.getMap()[i][j])).getMonster().getId() + " | ";
                     else
                         row2 += "   | ";
                 }

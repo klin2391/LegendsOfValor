@@ -18,6 +18,7 @@ public class FactoryMonster {
     private ArrayList <Monster> finalMonsters;
     private ArrayList <String> monsterType;
     private FileParser fp;
+    private int created;
     
 
     public FactoryMonster(){
@@ -41,6 +42,7 @@ public class FactoryMonster {
                 allMonsters.add(new Monster(MonsterStats, description, monsterType.get(i)));
             }
         }
+        this.created = 0;
     }
 
     // Creates a random selection of monsters scaled to the level of the heroes
@@ -68,6 +70,7 @@ public class FactoryMonster {
             int choice = rand.getRandomInt(0, allMonsters.size() - 1);
             finalMonsters.add(allMonsters.get(choice));
             finalMonsters.get(i).getLevel().setLevel(averageLevel);
+            finalMonsters.get(i).setId(this.created++);
         }
         return finalMonsters;
     }
@@ -79,6 +82,7 @@ public class FactoryMonster {
         int choice = rand.getRandomInt(0, allMonsters.size() - 1);
         finalMonsters.add(allMonsters.get(choice));
         finalMonsters.get(0).getLevel().setLevel(combinedLevel);
+        finalMonsters.get(0).setId(this.created++);
         return finalMonsters;
     }
 
@@ -90,6 +94,7 @@ public class FactoryMonster {
             int choice = rand.getRandomInt(0, allMonsters.size() - 1);
             finalMonsters.add(allMonsters.get(choice));
             finalMonsters.get(i).getLevel().setLevel(1);
+            finalMonsters.get(i).setId(this.created++);
         }
         return finalMonsters;
     }
