@@ -23,7 +23,7 @@ public class MonstersAndHeroesLegends {
         else {
             this.world = new WorldLegends(10);
         }
-        mc = new MonsterController(8, this.world);
+        mc = new MonsterController(3, this.world);
         world.generateWorld(this.mc);
         GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
         temp.setMonster(new Monster());

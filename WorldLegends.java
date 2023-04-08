@@ -133,15 +133,20 @@ public class WorldLegends extends World{
         return monsters;
     }
 
-    public boolean moveMonster(int fromX, int fromY) {
+    public int moveMonster(int fromX, int fromY) {
+        int ret = 0;
         GridSquare newGs = this.getMap()[fromX+1][fromY];
+        if (!(newGs instanceof GridSquareLegend)) {
+            newGs = this.getMap()[fromX][fromY-1];
+            ret = 1;
+        }
         if (!(newGs instanceof GridSquareLegend))
-            return false;
+            return -1;
         GridSquareLegend gs = (GridSquareLegend)(this.getMap()[fromX][fromY]);
         Monster m = gs.getMonster();
         gs.removeMonster();
         ((GridSquareLegend)(newGs)).setMonster(m);
-        return true;
+        return ret;
     }
     
     // Checks to see which heroes are within a 1 block range of monster

@@ -42,22 +42,25 @@ public class MonsterController {
 
     // Turns for monster
     public void takeMonsterTurns() {
-        if (turnsLeft == 0) {
-            this.spawnMonsters();
-            this.turnsLeft = this.turnsUntilRespawn;
-        }
         for (int i = 0; i < this.livingMonsters.size(); i++) {
             ArrayList<HeroTeamLegends> closeHeroes = this.world.getHeroesInRange(this.monsterXs.get(i), this.monsterYs.get(i));
             if (closeHeroes.isEmpty()) {
                 // move
-                if (this.world.moveMonster(this.monsterXs.get(i), this.monsterYs.get(i)))
+                int moved = this.world.moveMonster(this.monsterXs.get(i), this.monsterYs.get(i));
+                if (moved == 0)
                     this.monsterXs.set(i,this.monsterXs.get(i)+1);
+                else if (moved == 1)
+                    this.monsterYs.set(i, this.monsterYs.get(i)-1);
             }
             else {
                 // fight
                 this.livingMonsters.get(i).attack(closeHeroes.get(0));
                 System.out.println(this.livingMonsters.get(i).getName() + " attacks!");
             }
+        }
+        if (turnsLeft-- == 0) {
+            this.spawnMonsters();
+            this.turnsLeft = this.turnsUntilRespawn;
         }
     }
 
