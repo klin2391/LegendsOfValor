@@ -6,6 +6,11 @@
  * This class is used to generate a new ArrayList of heroes
  * It will read from a file and create a new hero based on the file
  * Player will be asked to select a hero
+ * 
+ * Modified by Kevin
+ * 07APR2023
+ * 
+ * Added a method to create a hero based on the name
  */
 
 import java.util.*;
@@ -46,6 +51,7 @@ public class FactoryHero {
         }
     }
 
+    // Creates a hero based on the name. Added for legends to handle respawns
     public Hero createHero(String name) {
         for (int i = 0; i < allHeroes.size(); i++) {
             for (int j = 0; j < allHeroes.get(i).size(); j++) {

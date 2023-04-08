@@ -1,3 +1,12 @@
+/*
+ * MonsterController.java
+ * by Kevin Lin/Anand Shetler (lin2391@bu.edu/ anashe@bu.edu)
+ * 07APR023
+ * 
+ * MonsterController class that controls the monsters in the game
+ * This includes spawning, movement, and attack for all monsters in play
+ */
+
 import java.util.ArrayList;
 
 public class MonsterController {
@@ -8,6 +17,7 @@ public class MonsterController {
     private int turnsLeft;
     private ArrayList<HeroTeamLegends> heroes;
 
+    // Constructor
     public MonsterController(int turnsUntilRespawn, ArrayList<HeroTeamLegends> heroes) {
         this.turnsUntilRespawn = turnsUntilRespawn;
         this.turnsLeft = 0;
@@ -16,10 +26,12 @@ public class MonsterController {
         this.heroes = heroes;
     }
 
+    //Mutator
     public void addNexus(GridSquareNexusMonster nexus) {
         this.nexuses.add(nexus);
     }
 
+    // Turns for monster
     public void takeMonsterTurns() {
         if (turnsLeft == 0) {
             this.spawnMonsters();

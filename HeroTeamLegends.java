@@ -1,12 +1,23 @@
+/*
+ * HeroTeamLegends.java
+ * by Kevin Lin (lin2391@bu.edu)
+ * 07APR2023
+ * 
+ * Represents a team of heroes in legends game.
+ * Each Hero team is in a lane. Each hero team has 1 hero
+ */
 import java.util.ArrayList;
 
 public class HeroTeamLegends extends HeroTeam{
-    private GridSquare homeNexus;
+    private GridSquare homeNexus;                       // Nexus that the hero team should spawn at
+
+    // Constructors
     public HeroTeamLegends(int heroNum) {
         super();
         this.setSymbol(String.valueOf(heroNum));
     }
 
+    // Constructor that takes in a specific hero
     public HeroTeamLegends(Hero hero, int heroNum) {
         super(hero);
         this.setSymbol(String.valueOf(heroNum));
@@ -17,9 +28,9 @@ public class HeroTeamLegends extends HeroTeam{
         this.homeNexus = nexus;
     }
 
+    // Returns the hero team to spawn nexus
     public boolean recall() {
-        if (this.homeNexus != null && this.homeNexus.getHeroTeam() == null){
-            System.out.println(this.homeNexus.getHeroTeam());
+        if (this.homeNexus != null && this.homeNexus.getHeroTeam() == null){        // if exists and not occupied
             this.homeNexus.moveHeroTeam(this);
             return true;
         }
@@ -30,24 +41,24 @@ public class HeroTeamLegends extends HeroTeam{
         
     }
 
+    // Respawns the hero team. Resets everything except for name and stats. Moves back to nexus
     public void respawn() {
         Hero temp = this.getHeroes().get(0);
-        String name = temp.getName();
-        FactoryHero factory = new FactoryHero();
+        String name = temp.getName();                            // Save name
+        FactoryHero factory = new FactoryHero();                
         temp = factory.createHero(name);
-        this.setHero(temp, 0);
-        recall();
-
-        //TODO UPDATE WORLD
+        this.setHero(temp, 0);                          // Reset hero
+        recall();                                                   // Move back to nexus
     }
 
     // Actions of the hero team
     public void heroAttack(HeroTeam heroTeam, ArrayList <Monster> monsters){
         Input input = new Input();
         for (Hero hero : heroTeam.getHeroes()){
-            if (hero.getAttributes().get("Health").getCurrent() <= 0)           // If hero is dead, skip turn
+            if (hero.getAttributes().get("Health").getCurrent() <= 0){           // If hero is dead, skip turn
+                respawn();
                 continue;
-                // TODO move to respawn
+            }
             System.out.println(hero.getName() + " it is your turn!");
             System.out.println(hero);
             int action = input.queryInt("What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory", 1, 4, "i");
