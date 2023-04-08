@@ -25,6 +25,10 @@ public class WorldLegends extends World{
         this.playerLocationYs = new ArrayList<>();
     }
 
+    public ArrayList<HeroTeamLegends> getHeroes() {
+        return this.heroes;
+    }
+
     public int getPlayerLocationXs(int i) {
         return this.playerLocationXs.get(i);
     }
@@ -55,8 +59,7 @@ public class WorldLegends extends World{
         return this.height;
     }
 
-    @Override
-    public void generateWorld() {
+    public void generateWorld(MonsterController mc) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < this.getSize(); j++) {
                 if (i == 0 || i == height-1 || j % 3 == 0 ||j == 0 || j == getSize()-1)         //Sets the border of the board to be severely restricted.
@@ -67,6 +70,9 @@ public class WorldLegends extends World{
                 // }
                 else if (i == 1){
                     this.getMap()[i][j] = new GridSquareNexusMonster(i,j);
+                    if ((j-2) % 3 == 0 && j > 1) {
+                        mc.addNexus((GridSquareNexusMonster)(this.getMap()[i][j]), i, j);
+                    }
                 }
                 else if (i == height-2){
                     this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket(),i,j);    // Creates market
@@ -97,7 +103,7 @@ public class WorldLegends extends World{
 
     public ArrayList<Monster> getMonstersInRange(int x, int y) {
         ArrayList<Monster> monsters = new ArrayList<>();
-        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1}};
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1},{0,0}};
         for (int i = 0; i < indices.length; i++) {
             GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
             if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).hasMonster()) {
@@ -105,6 +111,25 @@ public class WorldLegends extends World{
             }
         }
         return monsters;
+    }
+
+    public ArrayList<HeroTeamLegends> getHeroesInRange(int x, int y) {
+        ArrayList<HeroTeamLegends> closeHeroes = new ArrayList<>();
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1},{0,0}};
+        for (int i = 0; i < indices.length; i++) {
+            GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
+            if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).hasMonster()) {
+                closeHeroes.add((HeroTeamLegends)((GridSquareLegend) gs).getHeroTeam());
+            }
+        }
+        return closeHeroes;
+    }
+
+    public void moveMonster(int fromX, int fromY) {
+        GridSquareLegend gs = (GridSquareLegend)(this.getMap()[fromX][fromY]);
+        Monster m = gs.getMonster();
+        gs.removeMonster();
+        ((GridSquareLegend)(this.getMap()[fromX+1][fromY])).setMonster(m);
     }
 
     // Shows the entire world

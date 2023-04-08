@@ -43,8 +43,8 @@ public class GridSquareLegend extends GridSquare{
         return !Objects.isNull(this.monster);
     }
 
-    public void addMonster(Monster m) {
-        this.monster = m;
+    public void removeMonster() {
+        this.monster = null;
     }
 
     public String toString() {
