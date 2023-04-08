@@ -34,6 +34,10 @@ public class WorldLegends extends World{
         this.playerLocationYs = new ArrayList<>();
     }
 
+    public ArrayList<HeroTeamLegends> getHeroes() {
+        return this.heroes;
+    }
+
     // Accessors
     public int getPlayerLocationXs(int i) {
         return this.playerLocationXs.get(i);
@@ -70,14 +74,20 @@ public class WorldLegends extends World{
         return false;
     }
 
-    @Override
-    public void generateWorld() {
+    public int getHeight() {
+        return this.height;
+    }
+
+    public void generateWorld(MonsterController mc) {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < this.getSize(); j++) {
                 if (i == 0 || i == height-1 || j % 3 == 0 ||j == 0 || j == getSize()-1)         //Sets the border of the board to be severely restricted.
                     this.getMap()[i][j] = new GridSquareSeverelyRestricted();
                 else if (i == 1){                                                               // Top is monster nexus
                     this.getMap()[i][j] = new GridSquareNexusMonster(i,j);
+                    if ((j-2) % 3 == 0 && j > 1) {
+                        mc.addNexus((GridSquareNexusMonster)(this.getMap()[i][j]), i, j);
+                    }
                 }
                 else if (i == height-2){                                                        // Bottom is hero nexus                 
                     this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket(),i,j);    // Creates market
@@ -117,7 +127,7 @@ public class WorldLegends extends World{
     // Checks to see which monsters are within a 1 block range of hero
     public ArrayList<Monster> getMonstersInRange(int x, int y) {
         ArrayList<Monster> monsters = new ArrayList<>();
-        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1}};
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1},{0,0}};
         for (int i = 0; i < indices.length; i++) {
             GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
             if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).hasMonster()) {
@@ -127,10 +137,17 @@ public class WorldLegends extends World{
         return monsters;
     }
 
+    public void moveMonster(int fromX, int fromY) {
+        GridSquareLegend gs = (GridSquareLegend)(this.getMap()[fromX][fromY]);
+        Monster m = gs.getMonster();
+        gs.removeMonster();
+        ((GridSquareLegend)(this.getMap()[fromX+1][fromY])).setMonster(m);
+    }
+    
     // Checks to see which heroes are within a 1 block range of monster
     public ArrayList<HeroTeamLegends> getHeroesInRange(int x, int y) {
         ArrayList<HeroTeamLegends> heroes = new ArrayList<>();
-        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1}};
+        int[][] indices = {{-1,-1},{-1,0},{0,-1},{-1,1},{0,1},{1,1},{1,0},{1,-1},{0,0}};
         for (int i = 0; i < indices.length; i++) {
             GridSquare gs = this.getMap()[x+indices[i][0]][y+indices[i][1]];
             if (gs instanceof GridSquareLegend && ((GridSquareLegend) gs).getHeroTeam() != null) {

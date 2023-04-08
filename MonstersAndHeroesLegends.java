@@ -9,6 +9,7 @@
 public class MonstersAndHeroesLegends {
     private WorldLegends world;
     private Input userInput;
+    private MonsterController mc;
 
     // Constructor
     public MonstersAndHeroesLegends() {
@@ -22,7 +23,11 @@ public class MonstersAndHeroesLegends {
         else {
             this.world = new WorldLegends(10);
         }
-        world.generateWorld();
+        world.generateWorld(this.mc);
+        mc = new MonsterController(8, this.world);
+        GridSquareLegend temp = (GridSquareLegend) world.getMap()[2][2];
+        temp.setMonster(new Monster());
+        System.out.println("Monster created");
     }
 
     // Checks to see if monster is next to hero team. If so, the hero cannot move forward

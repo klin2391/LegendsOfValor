@@ -51,8 +51,8 @@ public class GridSquareLegend extends GridSquare{
         this.heroTeam = ht;
     }
 
-    public void addMonster(Monster m) {
-        this.monster = m;
+    public void removeMonster() {
+        this.monster = null;
     }
 
     // Adds hero team to grid square
