@@ -7,6 +7,11 @@
  * Can query ints, strings and booleans and validates each.
  * If user ever types quit as a response, quits program.
  * Adapted from TTT project.
+ * 
+ * Modified by Kevin
+ * 07APR2023
+ * Adding unique prompts and to check for certain letters is okay.
+ * 
  */
 
 import java.util.Scanner;
@@ -23,6 +28,17 @@ public class Input {
     // Takes user action. Returns the action
     public String userAction(){
         System.out.println("[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit");
+        String action = " ";
+        while(!isValidString(action)){
+            action = userInput.nextLine();    
+            checkQuit(action);
+        }
+        return action.toLowerCase();
+    }
+
+    // New prompt for user Action
+    public String userActionLegend(){
+        System.out.println("[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit");
         String action = " ";
         while(!isValidString(action)){
             action = userInput.nextLine();    
@@ -140,6 +156,8 @@ public class Input {
             case "p":
                 return true;
             case "y":
+                return true;
+            case "f":
                 return true;
             default:
                 return false;

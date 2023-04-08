@@ -5,6 +5,8 @@
  * 
  * This class represents the type of terrain in a grid
  * It contains the symbol, type, color, and whether or not it is walkable
+ * 
+ * Modified to include terrains for legends. 4 is a bush, 5 is for cave, 6 is for koulou, 7 is for hero nexus, 8 is for monster nexus
  */
 
  public class Terrain {

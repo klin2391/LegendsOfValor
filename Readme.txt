@@ -1,12 +1,34 @@
-# CS611-Assignment 3
-## Monsters and Heroes!
+# CS611-Assignment 4
+## Monsters and Heroes Legends!
 ---------------------------------------------------------------------------
 Kevin Lin
 lin2391@bu.edu
 U05482650
 
+Anand Shetler
+anashe@bu.edu
+
 ## Files
 ---------------------------------------------------------------------------
+
+GameSelector.java: Class that allows user to select a game to play.
+
+GridSquareLegends.java: Subclass of GridSquare that represents a tile in the world. Allows new terrain and a hero and monster on tile
+
+GridSquareNexus.java: Subclass of GridSquareLegend that represents a nexus tile. Spawns monsters or heroes and determines when game extends
+
+GridSquareNexusHero.java: Subclass of GridSquareNexus that represents a nexus tile that spawns heroes
+
+GridSquareNexusMonster.java: Subclass of GridSquareNexus that represents a nexus tile that spawns monsters
+
+HeroTeamLegends.java: Subclass of HeroTeam that represents a team of heroes. Each team has 1 hero and a spawn point. Ability to recall and respawn
+
+MonsterController.java: Class that controls the monsters. Spawns monsters and controls their movements
+
+MonstersAndHeroesLegends.java: Class that runs the game. Constructor and game loop.
+
+WorldLegends.java: Class that represents the world. Has a grid of GridSquareLegends. ArrayList of Heroes
+
 - Default
    -Animal.txt: A type of monster good at dodging
    -Armor.txt: A type of item that can be equipped by a hero
@@ -86,19 +108,23 @@ World.java: Class that represents the world. Has a grid of gridsquares. Heroes c
 
 ## Notes
 ---------------------------------------------------------------------------
-1. Files to be parsed are in the default folder
-2. I added a few additional fields. This includes a weight for items and a max weight a hero can carry
-3. Additionally, all items have a durability. This is used to determine if an item can be used or repaired
-4. All things that are parsed in have a description
-5. Armor and weapons have slots to go in (Armor: head, body, legs, feet, shield. Weapon: left hand, right hand, both)
+1. Allows selection of game 1 or game 2. (Original or new)
+2. If new game, allows user to select size of world (How many tiles between nexus)
+3. If new game, allows user to select number of heroes which determines number of lanes and width of world
+4. Files to be parsed are in the default folder
+5. I added a few additional fields. This includes a weight for items and a max weight a hero can carry
+6. Additionally, all items have a durability. This is used to determine if an item can be used or repaired
+7. All things that are parsed in have a description
+8. Armor and weapons have slots to go in (Armor: head, body, legs, feet, shield. Weapon: left hand, right hand, both)
     If shield is used, both hands can't have weapon and vice versa. 
-6. Items can be repaired in markets
-7. Some heroes have special abilities. These are listed in description.
+9. Items can be repaired in markets
+10. Some heroes have special abilities. These are listed in description.
     Notably, Geb can manipulate the terrain to his advantage (change any non border tile to common)
     Isis will heal all heroes in her team each km traveled
     Heimdallr allows his teams visible range to be increased by 1
-8. Monsters and Heroes fight by Each hero selecting a monster and attacking, then each monster selecting a hero and attacking
-9. Monsters are either 1 really powerful one (level = total of all heroes), a bunch of level 1 monsters (number = combined level of all heroes), the same number as the number of heroes at average level.
+11. Monsters and Heroes fight by Each hero selecting a monster and attacking, then each monster selecting a hero and attacking
+12. When a hero dies, they are removed from the world and respawn at their nexus as a new hero
+
 ## How to compile and run
 ---------------------------------------------------------------------------
 1. Navigate to the directory "MonstersAndHeroes" after unzipping the files

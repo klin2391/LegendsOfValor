@@ -78,7 +78,7 @@ public class MonstersAndHeroes {
                         market.getMarket().enterMarket(this.world.getHeroTeam());
                     }
                     else {
-                        System.out.println("There is no market in this area.");
+                        System.out.println("[!] There is no market in this area.");
                     }
                     break;
                 case "g":                                                       // Manipulate terrain (GEB only)                                   
@@ -101,7 +101,7 @@ public class MonstersAndHeroes {
                         }
                     }
                     else {
-                        System.out.println("Only Geb can manipulate terrain.");
+                        System.out.println("[!] Only Geb can manipulate terrain.");
                     }
                     break;
                 
@@ -129,7 +129,7 @@ public class MonstersAndHeroes {
                     this.world.getHeroTeam().getHeroes().get(player-1).drinkPotion(this.world.getHeroTeam().getHeroes().get(player-1), null, userInput);
                     break;
                 default:
-                    System.out.println("Invalid input. Please try again.");
+                    System.out.println("[!] Invalid input. Please try again.");
             }
         }
         Color.clearScreen();

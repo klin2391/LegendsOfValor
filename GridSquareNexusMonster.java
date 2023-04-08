@@ -1,17 +1,31 @@
+/*
+ * GridSquareNexusMonster.java
+ * by Kevin Lin/Anand Shetler (lin2391@bu.edu/ anashe@bu.edu)
+ * 07APR023
+ * 
+ * Subclass of GridSquareNexus that represents a monsters nexus. 
+ * Color of monster nexus is red
+ * if hero is in nexus, returns 1 for hero win
+ */
 public class GridSquareNexusMonster extends GridSquareNexus{
 
+    // Constructor that takes in coordinates
     public GridSquareNexusMonster(int x, int y) {
         super(8,x,y);
     }
 
+    // Removes team for when they leave tile
     public void removeHeroTeam(){
         super.removeHeroTeam();
     }
+
+    // Shows nexus as red N
     public String toString() {
         Color color = new Color("red");
         return color.getColor() + "N" + color.getBlack();
     }
     
+    // Checks if hero is in nexus. If so, outputs 1 for hero win
     public int checkWin() {
         if (this.getHeroTeam() != null) {
             return 1;

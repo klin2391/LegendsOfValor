@@ -29,6 +29,7 @@ public class HeroTeam {
         this.checkEasterEggs();
     }
 
+    //Constructor that takes in a specific hero
     public HeroTeam(Hero h) {
         heroes = new ArrayList<>();
         heroes.add(h);
@@ -36,6 +37,7 @@ public class HeroTeam {
         this.checkEasterEggs();
     }
 
+    // Used to see if the hero team has any extra abilities
     private void checkEasterEggs() {
         for (Hero hero : heroes) {
             if (hero.getName().equals("Isis")) {    // These gods are Easter eggs
@@ -83,6 +85,10 @@ public class HeroTeam {
 
     public void setSymbol(String val){
         symbol = val;
+    }
+
+    public void setHero(Hero h, int index){
+        heroes.set(index, h);
     }
 
     // Returns the symbol of the hero team

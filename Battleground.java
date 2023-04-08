@@ -1,4 +1,3 @@
-
 /*
  * Battleground.java
  * by Kevin Lin (lin2391@bu.edu)
