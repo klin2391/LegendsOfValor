@@ -134,19 +134,25 @@ public class WorldLegends extends World{
     }
 
     public int moveMonster(int fromX, int fromY) {
-        int ret = 0;
-        GridSquare newGs = this.getMap()[fromX+1][fromY];
-        if (!(newGs instanceof GridSquareLegend)) {
-            newGs = this.getMap()[fromX][fromY-1];
-            ret = 1;
+        int returnVal = 0;
+        GridSquare newGs = this.getMap()[fromX+1][fromY];       // Checks to see if monster can move forward
+        if (!(newGs instanceof GridSquareLegend) || ((GridSquareLegend) newGs).hasMonster()) {          // Tile is restricted or has monster
+            newGs = this.getMap()[fromX][fromY-1];              // Move left
+            returnVal = 1;
         }
-        if (!(newGs instanceof GridSquareLegend))
+        if (!(newGs instanceof GridSquareLegend) || ((GridSquareLegend) newGs).hasMonster()) {         // Tile to left is restricted or has monster 
+            newGs = this.getMap()[fromX][fromY+1];              // move right
+            returnVal = 2;
+        }
+        if (!(newGs instanceof GridSquareLegend) || ((GridSquareLegend) newGs).hasMonster()) {          // Tile to right is restricted or has monster
             return -1;
+        }
         GridSquareLegend gs = (GridSquareLegend)(this.getMap()[fromX][fromY]);
         Monster m = gs.getMonster();
         gs.removeMonster();
         ((GridSquareLegend)(newGs)).setMonster(m);
-        return ret;
+        return returnVal;
+
     }
     
     // Checks to see which heroes are within a 1 block range of monster
@@ -191,7 +197,7 @@ public class WorldLegends extends World{
                                                                             + this.getMap()[i][j].getTerrain().getColor().getBlack() + " ";
                 row13 += terrainChar + "-" + terrainChar + "-" + terrainChar;
                 if (this.getMap()[i][j].getIsOccupied())
-                    row2 += " | " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + "H" + this.getMap()[i][j].getHeroTeam().getSymbol()
+                    row2 += " | " + this.getMap()[i][j].getHeroTeam().getColor().getColor() + "H" + (this.getMap()[i][j].getHeroTeam().getSymbol())
                                                                             + this.getMap()[i][j].getHeroTeam().getColor().getBlack() + " ";
                 else
                     row2 += " |    ";

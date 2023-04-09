@@ -23,7 +23,7 @@ public class MonstersAndHeroesLegends {
         else {
             this.world = new WorldLegends(10);
         }
-        mc = new MonsterController(3, this.world);
+        mc = new MonsterController(5, this.world);
         world.generateWorld(this.mc);
     }
 

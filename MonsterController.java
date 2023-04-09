@@ -43,6 +43,14 @@ public class MonsterController {
     // Turns for monster
     public void takeMonsterTurns() {
         for (int i = 0; i < this.livingMonsters.size(); i++) {
+            if (this.livingMonsters.get(i).getAttributes().get("Health").getCurrent() == 0) {
+                this.livingMonsters.remove(i);
+                ((GridSquareLegend) this.world.getMap()[this.monsterXs.get(i)][this.monsterYs.get(i)]).setMonster(null);
+                this.monsterXs.remove(i);
+                this.monsterYs.remove(i);
+                i--;
+                continue;
+            }
             ArrayList<HeroTeamLegends> closeHeroes = this.world.getHeroesInRange(this.monsterXs.get(i), this.monsterYs.get(i));
             if (closeHeroes.isEmpty()) {
                 // move
@@ -51,11 +59,14 @@ public class MonsterController {
                     this.monsterXs.set(i,this.monsterXs.get(i)+1);
                 else if (moved == 1)
                     this.monsterYs.set(i, this.monsterYs.get(i)-1);
+                else if (moved == 2) {
+                    this.monsterYs.set(i, this.monsterYs.get(i)+1);
+                }
             }
             else {
                 // fight
                 this.livingMonsters.get(i).attack(closeHeroes.get(0));
-                System.out.println(this.livingMonsters.get(i).getName() + " attacks!");
+                // System.out.println(this.livingMonsters.get(i).getName() + " attacks!");
             }
         }
         if (turnsLeft-- == 0) {
@@ -66,12 +77,12 @@ public class MonsterController {
 
     private void spawnMonsters() {
         for (int i = 0; i < this.nexuses.size(); i++) {
-            if (!((GridSquareLegend)this.nexuses.get(i)).hasMonster()) {
-                Monster m = fm.selectOneMonster(this.world.getHeroes().get(i).getCombinedLevel(), 1).get(0);
-                this.nexuses.get(i).setMonster(m);
-                this.livingMonsters.add(m);
-                this.monsterXs.add(this.nexusXs.get(i));
-                this.monsterYs.add(this.nexusYs.get(i));
+            if (!((GridSquareLegend)this.nexuses.get(i)).hasMonster()) {                                            // Nexus is empty of monsters
+                Monster m = fm.selectOneMonster(this.world.getHeroes().get(i).getCombinedLevel(), 1).get(0);    // Get a monster of the appropriate level
+                this.nexuses.get(i).setMonster(m);                                            // Set the monster in the nexus   
+                this.livingMonsters.add(m);                                     // Add the monster to the list of living monsters
+                this.monsterXs.add(this.nexusXs.get(i));                // Add the monster's x coordinate to the list of monster x coordinates
+                this.monsterYs.add(this.nexusYs.get(i));                // Add the monster's y coordinate to the list of monster y coordinates
             }
         }
     }

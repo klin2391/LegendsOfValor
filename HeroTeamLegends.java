@@ -14,13 +14,13 @@ public class HeroTeamLegends extends HeroTeam{
     // Constructors
     public HeroTeamLegends(int heroNum) {
         super();
-        this.setSymbol(String.valueOf(heroNum));
+        this.setSymbol(String.valueOf(heroNum+1));
     }
 
     // Constructor that takes in a specific hero
     public HeroTeamLegends(Hero hero, int heroNum) {
         super(hero);
-        this.setSymbol(String.valueOf(heroNum));
+        this.setSymbol(String.valueOf(heroNum+1));
     }
 
     // Sets the nexus that the hero should spawn at
@@ -53,6 +53,10 @@ public class HeroTeamLegends extends HeroTeam{
 
     // Actions of the hero team
     public void heroAttack(HeroTeam heroTeam, ArrayList <Monster> monsters){
+        if (monsters.size() == 0){                                      // If no monsters, skip turn
+            System.out.println("There are no monsters to attack!");
+            return;
+        }
         Input input = new Input();
         for (Hero hero : heroTeam.getHeroes()){
             if (hero.getAttributes().get("Health").getCurrent() <= 0){           // If hero is dead, skip turn
