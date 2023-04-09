@@ -33,6 +33,20 @@ public class Monster {
         this.id = 0;
     }
 
+    // Create deep copy
+    public Monster(Monster m) {
+        this.name = m.getName();
+        this.description = m.getDescription();
+        this.category = m.getCategory();
+        this.level = new Level();
+        this.attributes = new HashMap<String, Attribute>();
+        Iterator attrIterator = m.getAttributes().entrySet().iterator();
+        while (attrIterator.hasNext()) {
+            Map.Entry mapElement = (Map.Entry)attrIterator.next();
+            this.attributes.put(mapElement.getKey().toString(), new Attribute((Attribute)mapElement.getValue()));
+        }
+    }
+
     // Constructor that takes in data
     public Monster(String[] data, String description, String category) {
         this.name = data[0];

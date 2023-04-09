@@ -68,7 +68,7 @@ public class FactoryMonster {
         RandomGen rand = new RandomGen();
         for (int i = 0; i < numHeroes; i++) {
             int choice = rand.getRandomInt(0, allMonsters.size() - 1);
-            finalMonsters.add(allMonsters.get(choice));
+            finalMonsters.add(new Monster(allMonsters.get(choice)));
             finalMonsters.get(i).getLevel().setLevel(averageLevel);
             finalMonsters.get(i).setId(this.created++);
         }
@@ -80,7 +80,7 @@ public class FactoryMonster {
         finalMonsters = new ArrayList<Monster>();
         RandomGen rand = new RandomGen();
         int choice = rand.getRandomInt(0, allMonsters.size() - 1);
-        finalMonsters.add(allMonsters.get(choice));
+        finalMonsters.add(new Monster(allMonsters.get(choice)));
         finalMonsters.get(0).getLevel().setLevel(combinedLevel);
         finalMonsters.get(0).setId(this.created++);
         return finalMonsters;
@@ -92,7 +92,7 @@ public class FactoryMonster {
         RandomGen rand = new RandomGen();
         for (int i = 0; i < combinedLevel ; i++) {
             int choice = rand.getRandomInt(0, allMonsters.size() - 1);
-            finalMonsters.add(allMonsters.get(choice));
+            finalMonsters.add(new Monster(allMonsters.get(choice)));
             finalMonsters.get(i).getLevel().setLevel(1);
             finalMonsters.get(i).setId(this.created++);
         }

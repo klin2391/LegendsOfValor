@@ -30,6 +30,14 @@ public class Attribute {
         this.favored = favored;
     }
 
+    // Deep copy constructor
+    public Attribute(Attribute a) {
+        this.max = a.getMax();
+        this.current = a.getCurrent();
+        this.name = a.getName();
+        this.favored = a.getFavored();
+    }
+
     // Accessor methods
     public double getCurrent() {
         return current;
@@ -41,6 +49,10 @@ public class Attribute {
 
     public String getName() {
         return name;
+    }
+
+    public boolean getFavored() {
+        return favored;
     }
 
     // Mutator methods
