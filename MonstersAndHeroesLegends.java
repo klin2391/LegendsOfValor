@@ -288,8 +288,13 @@ public class MonstersAndHeroesLegends {
         if (checkWinCondition() == 1) {
             System.out.println("The heroes have won!");
         }
+<<<<<<< Updated upstream
         else if (checkWinCondition() == 2) {
             System.out.println("The monsters have won!");
+=======
+        else if (checkWinCondition() % 2 == 0 && checkWinCondition() != 0) {                    // check win condition. If multiple cross, still win not a tie
+            System.out.println("[+] The monsters have won!");
+>>>>>>> Stashed changes
         }
         else {
             System.out.println("The game has ended in a draw.");

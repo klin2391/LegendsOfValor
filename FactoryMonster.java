@@ -19,7 +19,7 @@ public class FactoryMonster {
     private ArrayList <String> monsterType;
     private FileParser fp;
     
-
+    // Constructor
     public FactoryMonster(){
         monsterType = new ArrayList<String>();
         monsterType.add("Animal");                      // File names for monsters
