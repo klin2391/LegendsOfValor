@@ -80,13 +80,13 @@ public class WorldLegends extends World{
                 if (i == 0 || i == height-1 || j % 3 == 0 ||j == 0 || j == getSize()-1)         //Sets the border of the board to be severely restricted.
                     this.getMap()[i][j] = new GridSquareSeverelyRestricted();
                 else if (i == 1){                                                               // Top is monster nexus
-                    this.getMap()[i][j] = new GridSquareNexusMonster(i,j);
+                    this.getMap()[i][j] = new GridSquareNexusMonster();
                     if ((j-2) % 3 == 0 && j > 1) {
                         mc.addNexus((GridSquareNexusMonster)(this.getMap()[i][j]), i, j);
                     }
                 }
                 else if (i == height-2){                                                        // Bottom is hero nexus                 
-                    this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket(),i,j);    // Creates market
+                    this.getMap()[i][j] = new GridSquareNexusHero(this.getFactoryMarket().createMarket());    // Creates market
                     int heroNum = (j-1) / 3;
                     if (j>0 && (j-1) % 3 == 0 && heroNum < this.getHeroTeam().getTeamSize()) {      // Spawns heroes to nexus
                         this.heroes.get(heroNum).setHomeNexus(this.getMap()[i][j]);
@@ -99,13 +99,13 @@ public class WorldLegends extends World{
                     int randNum = this.getRand().generateRandomNumber();
                     if (randNum <= this.getProbabilityMarket()) {
                         randNum = this.getRand().getRandomInt(4, 6);
-                        this.getMap()[i][j] = new GridSquareLegend(randNum, i, j);                                // Creates legend terrain
+                        this.getMap()[i][j] = new GridSquareLegend(randNum);                                // Creates legend terrain
                     }
                     else if (randNum <= this.getProbabilityMarket() + this.getProbabilityRestricted()) {      // Creates restricted terrain
                         this.getMap()[i][j] = new GridSquareRestricted();
                     }
                     else {
-                        this.getMap()[i][j] = new GridSquareLegend(0, i ,j);                              // Creates common terrain
+                        this.getMap()[i][j] = new GridSquareLegend(0);                              // Creates common terrain
                     }
                 }
             }

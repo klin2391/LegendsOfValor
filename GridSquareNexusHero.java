@@ -11,19 +11,14 @@ public class GridSquareNexusHero extends GridSquareNexus{
     private Marketplace marketplace;
 
     // Constructor that takes in a marketplace and coordinates
-    public GridSquareNexusHero(Marketplace marketplace, int x, int y) {
-        super(7, x ,y );
+    public GridSquareNexusHero(Marketplace marketplace) {
+        super(7);
         this.marketplace = marketplace;
     }
     
     // Accessors
     public Marketplace getMarket() {
         return marketplace;
-    }
-
-    // Removes team for when they leave tile
-    public void removeHeroTeam(){
-        super.removeHeroTeam();
     }
 
     // Shows nexus as blue N

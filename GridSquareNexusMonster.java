@@ -10,13 +10,8 @@
 public class GridSquareNexusMonster extends GridSquareNexus{
 
     // Constructor that takes in coordinates
-    public GridSquareNexusMonster(int x, int y) {
-        super(8,x,y);
-    }
-
-    // Removes team for when they leave tile
-    public void removeHeroTeam(){
-        super.removeHeroTeam();
+    public GridSquareNexusMonster() {
+        super(8);
     }
 
     // Shows nexus as red N

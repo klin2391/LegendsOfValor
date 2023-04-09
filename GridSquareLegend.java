@@ -11,8 +11,6 @@ public class GridSquareLegend extends GridSquare{
     private int amplify;                                    // Which attribute to amplify
     private HeroTeam heroTeam;
     private Monster monster;
-    private int xcoord;
-    private int ycoord;
 
     // Constructor
     public GridSquareLegend(){
@@ -21,11 +19,9 @@ public class GridSquareLegend extends GridSquare{
     }
 
     // Constructor that takes in data
-    public GridSquareLegend(int amplify, int x, int y){
+    public GridSquareLegend(int amplify){
         super(amplify);
         this.amplify = amplify;
-        this.xcoord = x;
-        this.ycoord = y;
     }
 
     // Accessors

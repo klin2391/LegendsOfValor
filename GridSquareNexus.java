@@ -8,11 +8,9 @@
  */
 
 public abstract class GridSquareNexus extends GridSquareLegend{
-    private Boolean winConditionMet = false;
-
     // Constructor
-    public GridSquareNexus(int terrain, int x, int y){
-        super(terrain, x ,y );
+    public GridSquareNexus(int terrain){
+        super(terrain);
     }
 
     // Removes hero from grid square
