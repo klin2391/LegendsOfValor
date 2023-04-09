@@ -18,6 +18,7 @@ public class Monster {
     private String[] attributeFields = {"Health", "Damage", "Agility", "Defense"};
     private int id;
 
+    // Default constructor
     public Monster(){
         this.name = "M";
         this.description = "Template";
@@ -54,7 +55,10 @@ public class Monster {
         this.category = category;
         this.level = new Level();
         this.attributes = new HashMap<String, Attribute>();
-        for (int i = 0; i < attributeFields.length; i++) {
+        Attribute temp = new Attribute(Double.parseDouble(data[1]), "Health", false);               // I messed the order up so I have to do this
+        level.registerObserver(temp);
+        attributes.put("Health", temp);
+        for (int i = 1; i < attributeFields.length; i++) {
             Attribute attribute;
             attribute = new Attribute(Double.parseDouble(data[i + 2]), attributeFields[i], false);
             level.registerObserver(attribute);

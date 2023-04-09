@@ -21,6 +21,7 @@ public class MonsterController {
     private int turnsLeft;
     private WorldLegends world;
 
+    // Constructor
     public MonsterController(int turnsUntilRespawn, WorldLegends world) {
         this.turnsUntilRespawn = turnsUntilRespawn;
         this.turnsLeft = 0;
@@ -43,7 +44,7 @@ public class MonsterController {
     // Takes a turn for all monsters on the board. Monsters can either move or attack.
     public void takeMonsterTurns() {
         for (int i = 0; i < this.livingMonsters.size(); i++) {
-            if (this.livingMonsters.get(i).getAttributes().get("Health").getCurrent() == 0) {
+            if (this.livingMonsters.get(i).getAttributes().get("Health").getCurrent() == 0) {                               // If dead, remove from list adn map
                 this.livingMonsters.remove(i);
                 ((GridSquareLegend) this.world.getMap()[this.monsterXs.get(i)][this.monsterYs.get(i)]).setMonster(null);
                 this.monsterXs.remove(i);
@@ -52,8 +53,7 @@ public class MonsterController {
                 continue;
             }
             ArrayList<HeroTeamLegends> closeHeroes = this.world.getHeroesInRange(this.monsterXs.get(i), this.monsterYs.get(i));
-            if (closeHeroes.isEmpty()) {
-                // move
+            if (closeHeroes.isEmpty()) {                            // Move in useful direction
                 int moved = this.world.moveMonster(this.monsterXs.get(i), this.monsterYs.get(i));
                 if (moved == 0)
                     this.monsterXs.set(i,this.monsterXs.get(i)+1);
@@ -63,10 +63,8 @@ public class MonsterController {
                     this.monsterYs.set(i, this.monsterYs.get(i)+1);
                 }
             }
-            else {
-                // fight
+            else {                                                // Attack hero    
                 this.livingMonsters.get(i).attack(closeHeroes.get(0));
-                // System.out.println(this.livingMonsters.get(i).getName() + " attacks!");
             }
         }
         if (turnsLeft-- == 0) {
@@ -75,6 +73,7 @@ public class MonsterController {
         }
     }
 
+    // Spawns monsters in the nexuses
     private void spawnMonsters() {
         for (int i = 0; i < this.nexuses.size(); i++) {
             if (!((GridSquareLegend)this.nexuses.get(i)).hasMonster()) {                                            // Nexus is empty of monsters
