@@ -121,6 +121,9 @@ public class MonstersAndHeroesLegends {
                         Color.clearScreen();
                         player = this.userInput.queryInt("Which player would you like to teleport to?", 1, this.world.getHeroTeam().getTeamSize())-1;
                         int[] destination = this.world.showTeleportDestination(player);     // Shows available teleport destinations
+                        if (destination == null) {                                          // If no destination is available, break
+                            break;
+                        }
                         x = this.world.getPlayerLocationXs(i);
                         y = this.world.getPlayerLocationYs(i);
                         this.world.getMap()[destination[0]][destination[1]].moveHeroTeam(this.world.getHeroTeam(i));

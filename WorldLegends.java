@@ -109,15 +109,7 @@ public class WorldLegends extends World{
                     }
                 }
             }
-        }
-        // Used to test Hero movement past monsters and attacking monsters
-        // Monster m = new Monster();
-        // GridSquareLegend gs = (GridSquareLegend) this.getMap()[4][2];
-        // gs.setMonster(m);
-        // Monster m2 = new Monster();
-        // GridSquareLegend gs2 = (GridSquareLegend) this.getMap()[4][1];
-        // gs2.setMonster(m2);
-        
+        }  
     }
 
     // Checks to see which monsters are within a 1 block range of hero
@@ -256,7 +248,11 @@ public class WorldLegends extends World{
         System.out.println(output);
         
         Input input = new Input();
-        int choice = input.queryInt("Where would you like to teleport to? ", 1, position);          // Asks the user where they want to teleport to
+        int choice = input.queryInt("Where would you like to teleport to? (press 1 if both spots are X)", 1, position);          // Asks the user where they want to teleport to
+        if (position == 1) {
+            System.out.println("[!] There are no valid destinations.");
+            return null;
+        }
         return record[choice-1];                                                                                        // Returns the coordinates of the destination
     }
 
