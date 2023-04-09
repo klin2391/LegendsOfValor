@@ -35,6 +35,12 @@ public class MonstersAndHeroesLegends {
             return false;
         }
         if (this.world.getMap()[x][y-1].getTerrain().getWalkable()) {                   // Ensures that tile is not a wall
+            GridSquareLegend temp = (GridSquareLegend) this.world.getMap()[x][y];
+            if (temp.getMonster() != null) {
+                return true;
+            }
+        }
+        if (this.world.getMap()[x][y-1].getTerrain().getWalkable()) {                   // Ensures that tile is not a wall
             GridSquareLegend temp = (GridSquareLegend) this.world.getMap()[x][y-1];
             if (temp.getMonster() != null) {
                 return true;

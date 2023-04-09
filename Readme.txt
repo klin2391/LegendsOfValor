@@ -135,19 +135,25 @@ java -cp ./bin Main
 ## Input/Output Example
 ---------------------------------------------------------------------------
 Output:
-[+] Welcome to Monsters and Heroes!
+[+] Which game would you like to play? 1: Monsters and Heroes 2: Legends:
+
+Input:
+2
+
+Output:
+[+] Welcome to Monsters and Heroes Legends!
 [+] Would you like to modify the size of the world? (y/n):
 
 Input:
 n
 
-Output:
+Ouput:
 [+] Will additional heroes be joining you? (y/n):
 
 Input:
 y
 
-Ouput:
+Output:
 [+] How many heroes will embark on this quest? (1-3):
 
 Input:
@@ -162,7 +168,7 @@ Output:
 Input:
 1
 
-Output:
+Ouput:
 1. [i] Name: Isis
         [i] Description: Goddess of life, she healed her husband Osiris, and has the ability to heal heroes over km walked.
         [i] Level: 1
@@ -202,99 +208,245 @@ Output:
 [+] Player 1, select a hero to add to your party: (1 - 3):
 
 Input:
-2
+1
 
-Output:
+Ouput:
 [+] 1. Norse - Favored for their dexterity and agility (magic and dodging)
 [+] 2. Greek - Favored for their strength and dexterity (attack and magic)
 [+] Player 2, select a culture to add a hero to your party: (1 - 2):
 
 Input:
-2
+1
 
-Output:
-1. [i] Name: Achilles
-        [i] Description: This warrior was known in battle for being untouchable in combat. He has good agility
+Ouput:
+1. [i] Name: Thor
+        [i] Description: The god of storms is heard during storms beating his hammer. He is very strong
         [i] Level: 1
         [i] Experience to next level: 10
         [i] Current Health: 100 / 100
         [i] Current Mana: 100 / 100
-        [i] Current Strength: 20 / 20
-        [i] Current Agility: 20 / 20
-        [i] Current Dexterity: 10 / 10
+        [i] Current Strength: 30 / 30
+        [i] Current Agility: 10 / 10
+        [i] Current Dexterity: 15 / 15
         [i] Current Weight: 0 / 100
         [i] Gold: 1000 coins
 
-2. [i] Name: Hercules
-        [i] Description: This demigod wears wears the hide of the Nemean Lion that increases his health.
-        [i] Level: 1
-        [i] Experience to next level: 10
-        [i] Current Health: 200 / 200
-        [i] Current Mana: 100 / 100
-        [i] Current Strength: 20 / 20
-        [i] Current Agility: 15 / 15
-        [i] Current Dexterity: 10 / 10
-        [i] Current Weight: 0 / 100
-        [i] Gold: 1000 coins
-
-3. [i] Name: Midas
-        [i] Description: A cautionary tale against greed is benefitial to this king. He has a lot of gold.
+2. [i] Name: Heimdallr
+        [i] Description: The watchman of the gods has keen senses and allows him to see further than most
         [i] Level: 1
         [i] Experience to next level: 10
         [i] Current Health: 100 / 100
         [i] Current Mana: 100 / 100
         [i] Current Strength: 15 / 15
-        [i] Current Agility: 15 / 15
-        [i] Current Dexterity: 10 / 10
+        [i] Current Agility: 10 / 10
+        [i] Current Dexterity: 15 / 15
         [i] Current Weight: 0 / 100
-        [i] Gold: 10000 coins
+        [i] Gold: 1000 coins
+
+3. [i] Name: Loki
+        [i] Description: The trickster was raised by witches and is proficient in magic
+        [i] Level: 1
+        [i] Experience to next level: 10
+        [i] Current Health: 100 / 100
+        [i] Current Mana: 100 / 100
+        [i] Current Strength: 15 / 15
+        [i] Current Agility: 10 / 10
+        [i] Current Dexterity: 20 / 20
+        [i] Current Weight: 0 / 100
+        [i] Gold: 1000 coins
 
 [+] Player 2, select a hero to add to your party: (1 - 3):
 
 Input:
 1
 
+Ouput:
+X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  | H1    |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
 Output:
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |     |  /  |  M  |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  M  |     |  /  |     |  /  |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  /  |  M  |     |     |     |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |  M  |  H  |     |     |  M  |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  M  |     |  /  |     |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  /  |  M  |     |  /  |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  M  |  M  |     |  /  |  /  |  /  |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |     |     |  /  |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
 
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |  /  |     |
-+-----+-----+-----+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
 
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input: 
-I
+Input:
+t
 
 Output:
-[+] Which player's inventory would you like to view?1. Geb 2. Achilles :
+Hello there Thor!
+[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
 
 Input:
 1
+
+Output:
+[1] Name: Leather_Boot
+        [i] Description: Like nikes!
+        [i] Value: 10 coins
+        [i] Weight: 1 lbs
+        [i] Required Level: 1
+        [i] Protection: 10
+        [i] Body Part: Feet
+        [i] Uses Remaining: 20.0 / 20.0
+[2] Name: Mail_Chest
+        [i] Description: Mail not as in a letter
+        [i] Value: 20 coins
+        [i] Weight: 20 lbs
+        [i] Required Level: 2
+        [i] Protection: 20
+        [i] Body Part: Chest
+        [i] Uses Remaining: 40.0 / 40.0
+[3] Name: Weight_I
+        [i] Description:  Drink your milk so you can grow up big and strong
+        [i] Value: 10 coins
+        [i] Weight: 2 lbs
+        [i] Required Level: 1
+        [i] Effect: 30
+        [i] Target Attribute: Weight
+        [i] Uses Remaining: 1.0 / 1.0
+[4] Name: Slow_I Charm
+        [i] Description: A spell that weakens enemy agility
+        [i] Value: 10 coins
+        [i] Weight: 2 lbs
+        [i] Required Level: 1
+        [i] Effect: 10
+        [i] Target Attribute: Agility
+        [i] Damage: 20
+        [i] Mana Cost: 30
+        [i] Uses Remaining: 3.0 / 3.0
+[5] Name: Leather_Pants
+        [i] Description: They are back in style!
+        [i] Value: 10 coins
+        [i] Weight: 2 lbs
+        [i] Required Level: 1
+        [i] Protection: 10
+        [i] Body Part: Legs
+        [i] Uses Remaining: 20.0 / 20.0
+[6] Name: Mail_Chest
+        [i] Description: Mail not as in a letter
+        [i] Value: 20 coins
+        [i] Weight: 20 lbs
+        [i] Required Level: 2
+        [i] Protection: 20
+        [i] Body Part: Chest
+        [i] Uses Remaining: 40.0 / 40.0
+
+[7] Leave Shop
+[+] Which item would you like to purchase?:
+
+Input:
+1
+
+Ouput:
+You have bought a Leather_Boot for 10 coins.
+[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
+
+Input:
+4
+
+Output:
+Thats too bad. Just remember, you break it, you buy it!
+Pleasure doing buisness with you!
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+i
 
 Output:
 Armor:
@@ -320,334 +472,85 @@ Rucksack:
         [i] Mana Cost: 0
         [i] Uses Remaining: 0.0 / 0.0
 
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |  /  |     |
-+-----+-----+-----+
+ Name: Leather_Boot
+        [i] Description: Like nikes!
+        [i] Value: 5 coins
+        [i] Weight: 1 lbs
+        [i] Required Level: 1
+        [i] Protection: 10
+        [i] Body Part: Feet
+        [i] Uses Remaining: 20.0 / 20.0
 
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
 
 Input:
-M
+c
 
 Output:
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |     |  /  |  M  |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  M  |     |  /  |     |  /  |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  /  |  M  |     |     |     |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |  M  |  H  |     |     |  M  |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  M  |     |  /  |     |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  /  |  M  |     |  /  |     |     |  /  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |  M  |  M  |     |  /  |  /  |  /  |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |     |     |     |     |  /  |     |     |     |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-|  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |  X  |
-+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
-
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |  /  |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input:
-h
-
-Ouput:
-[i] Name: Geb
-        [i] Description: The earth god, has the ability to change restricted terrain to common terrain
+1. [i] Name: Thor
+        [i] Description: The god of storms is heard during storms beating his hammer. He is very strong
         [i] Level: 1
         [i] Experience to next level: 10
         [i] Current Health: 100 / 100
         [i] Current Mana: 100 / 100
-        [i] Current Strength: 10 / 10
-        [i] Current Agility: 15 / 15
-        [i] Current Dexterity: 15 / 15
-        [i] Current Weight: 0 / 100
-        [i] Gold: 1000 coins
-
-[i] Name: Achilles
-        [i] Description: This warrior was known in battle for being untouchable in combat. He has good agility
-        [i] Level: 1
-        [i] Experience to next level: 10
-        [i] Current Health: 100 / 100
-        [i] Current Mana: 100 / 100
-        [i] Current Strength: 20 / 20
-        [i] Current Agility: 20 / 20
-        [i] Current Dexterity: 10 / 10
-        [i] Current Weight: 0 / 100
-        [i] Gold: 1000 coins
-
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |  /  |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input:
-t
-
-Ouput:
-There is no market in this area.
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |  /  |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input:
-g
-
-Output:
-[+] Which direction would you like to manipulate terrain? (1. North, 2. East, 3. South, 4. West):
-
-Input:
-3
-
-Output:
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-|  M  |  H  |     |
-+-----+-----+-----+
-|     |     |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input: 
-d
-
-Ouput:
-+-----+-----+-----+
-|  M  |     |     |
-+-----+-----+-----+
-|     |  H  |     |
-+-----+-----+-----+
-|  M  |     |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input:
-t
-
-Output:
-Hello there Geb!
-[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
-
-Input: 
-1
-
-Output:
-[1] Name: Vulnerability_I Charm
-        [i] Description: A spell that weakens enemy defense
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 10
-        [i] Target Attribute: Defense
-        [i] Damage: 20
-        [i] Mana Cost: 30
-        [i] Uses Remaining: 3.0 / 3.0
-[2] Name: Leather_Shield
-        [i] Description: A shield made of leather
-        [i] Value: 10 coins
-        [i] Weight: 5 lbs
-        [i] Required Level: 1
-        [i] Protection: 10
-        [i] Body Part: Hand
-        [i] Uses Remaining: 20.0 / 20.0
-[3] Name: Health_I
-        [i] Description:  Bottoms up
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Health
-        [i] Uses Remaining: 1.0 / 1.0
-[4] Name: Sword
-        [i] Description: Stabby Boi
-        [i] Value: 100 coins
-        [i] Weight: 10 lbs
-        [i] Required Level: 1
-        [i] Damage: 55
-        [i] Hands Required: 1
-        [i] Uses Remaining: 100.0 / 100.0
-[5] Name: Agility_I
-        [i] Description:  No answers at the bottom of the bottle
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Agility
-        [i] Uses Remaining: 1.0 / 1.0
-[6] Name: Agility_I
-        [i] Description:  No answers at the bottom of the bottle
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Agility
-        [i] Uses Remaining: 1.0 / 1.0
-
-[7] Leave Shop
-[+] Which item would you like to purchase?:
-
-Input:
-4
-
-You have bought a Sword for 100 coins.
-[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
-
-Input:
-4
-
-Hello there Achilles!
-[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
-
-Input:
-1
-
-Output:
-[1] Name: Vulnerability_I Charm
-        [i] Description: A spell that weakens enemy defense
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 10
-        [i] Target Attribute: Defense
-        [i] Damage: 20
-        [i] Mana Cost: 30
-        [i] Uses Remaining: 3.0 / 3.0
-[2] Name: Leather_Shield
-        [i] Description: A shield made of leather
-        [i] Value: 10 coins
-        [i] Weight: 5 lbs
-        [i] Required Level: 1
-        [i] Protection: 10
-        [i] Body Part: Hand
-        [i] Uses Remaining: 20.0 / 20.0
-[3] Name: Health_I
-        [i] Description:  Bottoms up
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Health
-        [i] Uses Remaining: 1.0 / 1.0
-[4] Name: Agility_I
-        [i] Description:  No answers at the bottom of the bottle
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Agility
-        [i] Uses Remaining: 1.0 / 1.0
-[5] Name: Agility_I
-        [i] Description:  No answers at the bottom of the bottle
-        [i] Value: 10 coins
-        [i] Weight: 2 lbs
-        [i] Required Level: 1
-        [i] Effect: 30
-        [i] Target Attribute: Agility
-        [i] Uses Remaining: 1.0 / 1.0
-[6] Leave Shop
-[+] Which item would you like to purchase?:
-
-Input:
-6
-
-Ouput:
-Very well, come back when you have something to buy!
-[+] What can I do for you? Would you like to buy or sell goods? (Buy: 1, Sell: 2, Repair: 3, Just lookin: 4):
-
-Input:
-4
-
-Thats too bad. Just remember, you break it, you buy it!
-Pleasure doing buisness with you!
-+-----+-----+-----+
-|  M  |     |     |
-+-----+-----+-----+
-|     |  H  |     |
-+-----+-----+-----+
-|  M  |     |     |
-+-----+-----+-----+
-
-[+] <w/a/s/d> to move, <i> for inventory, <m> for map, <h> for hero stats, <t> for trade, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
-
-Input:
-d
-
-Output:
-You have encountered a monster!
-1:[i] Name: Anubis
-        [i] Description: Half man, half jackal
-        [i] Level: 1
-        [i] Current Health: 100 / 100
-        [i] Current Damage: 45 / 45
+        [i] Current Strength: 30 / 30
         [i] Current Agility: 10 / 10
-        [i] Current Defense: 20 / 20
-
-2:[i] Name: Minotaur
-        [i] Description: Half man, half bull
-        [i] Level: 1
-        [i] Current Health: 100 / 100
-        [i] Current Damage: 55 / 55
-        [i] Current Agility: 5 / 5
-        [i] Current Defense: 20 / 20
-
-Geb it is your turn!
-[i] Name: Geb
-        [i] Description: The earth god, has the ability to change restricted terrain to common terrain
-        [i] Level: 1
-        [i] Experience to next level: 10
-        [i] Current Health: 100 / 100
-        [i] Current Mana: 100 / 100
-        [i] Current Strength: 10 / 10
-        [i] Current Agility: 15 / 15
         [i] Current Dexterity: 15 / 15
-        [i] Current Weight: 10 / 100
-        [i] Gold: 900 coins
+        [i] Current Weight: 1 / 100
+        [i] Gold: 990 coins
 
-[+] What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory:
-4
+[+] Which player's to change?:
+
+Input:
+1
 
 Output:
-[+] What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory:
-1: Name: Sword
-        [i] Description: Stabby Boi
-        [i] Value: 50 coins
-        [i] Weight: 10 lbs
+[+] Would you like to remove equiptment or add equiptment? (1. Remove, 2. Add):
+
+Input:
+2
+
+Output:
+1: Name: Leather_Boot
+        [i] Description: Like nikes!
+        [i] Value: 5 coins
+        [i] Weight: 1 lbs
         [i] Required Level: 1
-        [i] Damage: 55
-        [i] Hands Required: 1
-        [i] Uses Remaining: 100.0 / 100.0
+        [i] Protection: 10
+        [i] Body Part: Feet
+        [i] Uses Remaining: 20.0 / 20.0
 
 [+] Which equiptable do you want to use?:
 
@@ -655,94 +558,508 @@ Input:
 1
 
 Output:
-[+] Which weapon slot do you want to use? 0: Left Hand, 1: Right Hand, 2: Double:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
 
 Input:
-2
+w
 
 Output:
-Achilles it is your turn!
-[i] Name: Achilles
-        [i] Description: This warrior was known in battle for being untouchable in combat. He has good agility
-        [i] Level: 1
-        [i] Experience to next level: 10
-        [i] Current Health: 100 / 100
-        [i] Current Mana: 100 / 100
-        [i] Current Strength: 20 / 20
-        [i] Current Agility: 20 / 20
-        [i] Current Dexterity: 10 / 10
-        [i] Current Weight: 0 / 100
-        [i] Gold: 1000 coins
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
 
-[+] What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory:
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+y
+
+Output:
+[+] Which player would you like to teleport to?:
 
 Input:
 1
 
 Output:
-1: [i] Name: Anubis
-        [i] Description: Half man, half jackal
-        [i] Level: 1
-        [i] Current Health: 100 / 100
-        [i] Current Damage: 45 / 45
-        [i] Current Agility: 10 / 10
-        [i] Current Defense: 20 / 20
+ X - X - X  B - B - B    -   -
+ |       |  | X     |  | 1     |
+ X - X - X  B - B - B    -   -
+ X - X - X  B - B - B    -   -
+ |       |  | 2     |  |       |
+ X - X - X  B - B - B    -   -
 
-2: [i] Name: Minotaur
-        [i] Description: Half man, half bull
-        [i] Level: 1
-        [i] Current Health: 100 / 100
-        [i] Current Damage: 55 / 55
-        [i] Current Agility: 5 / 5
-        [i] Current Defense: 20 / 20
-
-[+] Which monster do you want to attack?:
+[+] Where would you like to teleport to? :
 
 Input:
 1
 
 Output:
-INEFFECTIVE! Achilles hit Anubis for 0 damage!
-Anubis attacks!
-Anubis missed!
-Minotaur attacks!
-Minotaur attacked Geb for 55 damage!
-Healed Geb for 4.95 health!
-Healed Achilles for 10.0 health!
-Geb it is your turn!
-[i] Name: Geb
-        [i] Description: The earth god, has the ability to change restricted terrain to common terrain
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  | H1    |  | H2    |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+m
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  | H2    |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+m
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  | H1    |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  | H1    |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  | H1    |  |    M1 |  |       |  |       |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  | H2    |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+Crocodile attacked Isis for 10 damage!
+Snake missed!
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  | H1    |  |    M1 |  |       |  | H2    |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+w
+
+Output:
+[!] There is a monster adjacent to you! You cannot move.
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  | H1    |  |    M1 |  |       |  | H2    |  |    M2 |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+
+[+] Player 2's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
+
+Input:
+f
+
+Output:
+Thor it is your turn!
+[i] Name: Thor
+        [i] Description: The god of storms is heard during storms beating his hammer. He is very strong
         [i] Level: 1
         [i] Experience to next level: 10
-        [i] Current Health: 49 / 100
+        [i] Current Health: 100 / 100
         [i] Current Mana: 100 / 100
-        [i] Current Strength: 10 / 10
-        [i] Current Agility: 15 / 15
+        [i] Current Strength: 30 / 30
+        [i] Current Agility: 11 / 10
         [i] Current Dexterity: 15 / 15
-        [i] Current Weight: 10 / 100
-        [i] Gold: 900 coins
+        [i] Current Weight: 1 / 100
+        [i] Gold: 990 coins
 
 [+] What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory:
 
 Input:
 1
-
-Output:
-1: [i] Name: Anubis
-        [i] Description: Half man, half jackal
+1: [i] Name: Snake
+        [i] Description: Smooth and Slippery!
         [i] Level: 1
         [i] Current Health: 100 / 100
-        [i] Current Damage: 45 / 45
-        [i] Current Agility: 10 / 10
-        [i] Current Defense: 20 / 20
-
-2: [i] Name: Minotaur
-        [i] Description: Half man, half bull
-        [i] Level: 1
-        [i] Current Health: 100 / 100
-        [i] Current Damage: 55 / 55
-        [i] Current Agility: 5 / 5
-        [i] Current Defense: 20 / 20
+        [i] Current Damage: 5 / 5
+        [i] Current Agility: 15 / 15
+        [i] Current Defense: 10 / 10
 
 [+] Which monster do you want to attack?:
 
@@ -750,21 +1067,51 @@ Input:
 1
 
 Output:
-EFFECTIVE! Geb hit Anubis for 42 damage!
-Achilles it is your turn!
-[i] Name: Achilles
-        [i] Description: This warrior was known in battle for being untouchable in combat. He has good agility
-        [i] Level: 1
-        [i] Experience to next level: 10
-        [i] Current Health: 100 / 100
-        [i] Current Mana: 100 / 100
-        [i] Current Strength: 20 / 20
-        [i] Current Agility: 20 / 20
-        [i] Current Dexterity: 10 / 10
-        [i] Current Weight: 0 / 100
-        [i] Gold: 1000 coins
+EFFECTIVE! Thor hit Snake for 17 damage!
+Crocodile attacked Isis for 10 damage!
+Snake attacked Thor for 0 damage!
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |    M3 |  |       |  |       |  |    M4 |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -    C - C - C  X - X - X  C - C - C    -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X    -   -      -   -    X - X - X    -   -    B - B - B  X - X - X
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ |       |  | H1    |  |    M3 |  |       |  | H2    |  |    M4 |  |       |
+ X - X - X    -   -      -   -    X - X - X  C - C - C    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X  K - K - K    -   -    X - X - X
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  B - B - B    -   -    X - X - X    -   -      -   -    X - X - X
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  N - N - N  N - N - N  X - X - X  N - N - N  N - N - N  X - X - X
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
+ |       |  |       |  |       |  |       |  |       |  |       |  |       |
+ X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X  X - X - X
 
-[+] What do you want to do? 1: Attack using equipted weapon, 2: Cast a spell using charm, 3: Drink a potion, 4: Equipt from inventory:
+[+] Player 1's turn.
+[+] <w/a/s/d> to move, <i> for inventory, <m> for recall, <h> for hero stats, <t> for trade, <f> for fight, <y> for teleport, <g> for changing terrain, <c> to change inventory, <p> to drink potion, <q> to quit
 
+...
 
-etc. etc. etc.
+Output:
+[+] The monsters have won!
+[+] Would you like to play again? (y/n):
+
+Input:
+N
+
+Output:
+[+] Goodbye!
