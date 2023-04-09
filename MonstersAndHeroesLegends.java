@@ -228,7 +228,7 @@ public class MonstersAndHeroesLegends {
         if (checkWinCondition() == 1) {                         // check win condition
             System.out.println("[+] The heroes have won!");
         }
-        else if (checkWinCondition() == 2) {                    // check win condition
+        else if (checkWinCondition() % 2 == 0 && checkWinCondition() != 0) {                    // check win condition. If multiple cross, still win not a tie
             System.out.println("[+] The monsters have won!");
         }
         else {
