@@ -17,15 +17,18 @@ public class AttributeWeight extends Attribute{
     }
 
     // Mutator methods. Does not make current = max
+    @Override
     public void setMax(double max) {
         this.max = max;
     }
 
+    @Override
     public void increaseMax(double amount) {
         this.max += amount;
     }
 
     // Override toString method because less weight is better
+    @Override
     public String toString() {
         String output = "";
         Color color = new Color();

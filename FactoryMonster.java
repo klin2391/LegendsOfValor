@@ -10,7 +10,6 @@
  */
 
 import java.util.*;
-import java.math.*;
 
 public class FactoryMonster {
     private ArrayList <String> raw;

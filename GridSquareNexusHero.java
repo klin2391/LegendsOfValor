@@ -22,6 +22,7 @@ public class GridSquareNexusHero extends GridSquareNexus{
     }
 
     // Shows nexus as blue N
+    @Override
     public String toString() {
         Color color = new Color("cyan");
         return color.getColor() + "N" + color.getBlack();

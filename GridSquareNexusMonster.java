@@ -15,6 +15,7 @@ public class GridSquareNexusMonster extends GridSquareNexus{
     }
 
     // Shows nexus as red N
+    @Override
     public String toString() {
         Color color = new Color("red");
         return color.getColor() + "N" + color.getBlack();

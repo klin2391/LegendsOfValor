@@ -7,7 +7,6 @@
  * It contains a name, the current and max values of the attribute.
  */
 
-import java.math.*;
 public class Attribute {
     protected double current;
     protected double max;

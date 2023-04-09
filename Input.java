@@ -15,7 +15,6 @@
  */
 
 import java.util.Scanner;
-import java.math.*;
 
 public class Input {
     public Scanner userInput;                       // Scanner object

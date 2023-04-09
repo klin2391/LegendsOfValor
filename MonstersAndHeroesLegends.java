@@ -65,7 +65,7 @@ public class MonstersAndHeroesLegends {
                     int x = this.world.getPlayerLocationXs(i);
                     int y = this.world.getPlayerLocationYs(i);
                     this.world.getMap()[x][y].removeHeroTeam();
-                    // CHange coordinates of heroTeam
+                    // Change coordinates of heroTeam
                     int height = this.world.getMap().length;
                     this.world.setPlayerLocationXs(i, height-2);
                     this.world.setPlayerLocationYs(i, (3*i+1));

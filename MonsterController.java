@@ -40,7 +40,7 @@ public class MonsterController {
         this.nexusYs.add(y);
     }
 
-    // Turns for monster
+    // Takes a turn for all monsters on the board. Monsters can either move or attack.
     public void takeMonsterTurns() {
         for (int i = 0; i < this.livingMonsters.size(); i++) {
             if (this.livingMonsters.get(i).getAttributes().get("Health").getCurrent() == 0) {

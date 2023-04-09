@@ -14,17 +14,19 @@ public abstract class GridSquareNexus extends GridSquareLegend{
     }
 
     // Removes hero from grid square
+    @Override
     public void removeHeroTeam() {
         this.setHeroTeam(null);
         this.isOccupied = false;
     }
 
     // Adds hero team to grid square
+    @Override
     public boolean moveHeroTeam(HeroTeam ht) {
         this.setHeroTeam(ht);
         this.isOccupied = true;
         return true;
     }
 
-    abstract public int checkWin();                         // Checks if win condition is met ie enemy is in nexus
+    public abstract int checkWin();                         // Checks if win condition is met ie enemy is in nexus
 }
