@@ -23,8 +23,8 @@ public class FactoryMonster {
     public FactoryMonster(){
         monsterType = new ArrayList<String>();
         monsterType.add("Animal");                      // File names for monsters
-        // monsterType.add("Hybrid");
-        // monsterType.add("Beast");
+        monsterType.add("Hybrid");
+        monsterType.add("Beast");
         allMonsters = new ArrayList<Monster>();
 
         for (int i = 0; i < monsterType.size(); i++) {
